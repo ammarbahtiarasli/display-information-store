@@ -215,37 +215,38 @@
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(22,163,74,.08);
       }
-      /* Area nama */
+      /* Area nama + emoji */
       .pcard-top {
         flex: 1;
         display: flex;
         align-items: center;
-        padding: .35rem .85rem .2rem;
+        gap: .55rem;
+        padding: .3rem .75rem .2rem .6rem;
         background: #ffffff;
-        position: relative;
         overflow: hidden;
       }
-      .pcard-top::after {
-        content: '';
-        position: absolute;
-        right: -.5rem;
-        top: -.5rem;
-        width: 2.6rem;
-        height: 2.6rem;
-        border-radius: 50%;
-        background: #bbf7d0;               /* green-200 */
-        opacity: .6;
+      .pcard-emoji {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(2rem, 5vh, 3.8rem);
+        height: clamp(2rem, 5vh, 3.8rem);
+        border-radius: .6rem;
+        background: #f0fdf4;               /* green-50 */
+        font-size: clamp(1.2rem, 3vh, 2.4rem);
+        line-height: 1;
+        flex-shrink: 0;
       }
       .pname {
-        font-size: clamp(1.1rem, 3vh, 2.4rem);
+        font-size: clamp(1rem, 2.6vh, 2.1rem);
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: .04em;
         line-height: 1.15;
         color: #14532d;                    /* green-900 */
         word-break: break-word;
-        position: relative;
-        z-index: 1;
+        min-width: 0;
       }
       /* Strip harga */
       .pcard-bottom {
@@ -381,18 +382,18 @@
           </div>
         </div>
         <div class="card-grid">
-          <article class="pcard"><div class="pcard-top"><p class="pname">Aromanis</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Bakpia isi 12</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Bakpia isi 15</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Basreng</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Boboko</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Brem</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Coklat kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp8.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Coklat besar</p></div><div class="pcard-bottom"><p class="pprice">Rp7.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Coklat kerikil</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Emping</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Grubi kremes besar</p></div><div class="pcard-bottom"><p class="pprice">Rp16.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Grubi kremes kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍬</div><p class="pname">Aromanis</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🥮</div><p class="pname">Bakpia isi 12</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🥮</div><p class="pname">Bakpia isi 15</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🐟</div><p class="pname">Basreng</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🧺</div><p class="pname">Boboko</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍚</div><p class="pname">Brem</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍫</div><p class="pname">Coklat kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp8.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍫</div><p class="pname">Coklat besar</p></div><div class="pcard-bottom"><p class="pprice">Rp7.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍫</div><p class="pname">Coklat kerikil</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🌾</div><p class="pname">Emping</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🫓</div><p class="pname">Grubi kremes besar</p></div><div class="pcard-bottom"><p class="pprice">Rp16.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🫓</div><p class="pname">Grubi kremes kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
         </div>
       </section>
 
@@ -406,18 +407,18 @@
           </div>
         </div>
         <div class="card-grid">
-          <article class="pcard"><div class="pcard-top"><p class="pname">Intip madu</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Jagong marning</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Kerupuk buah</p></div><div class="pcard-bottom"><p class="pprice">Rp13.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Kolontong</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Kolontong kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp7.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Kompor</p></div><div class="pcard-bottom"><p class="pprice">Rp30.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Kompor fullset</p></div><div class="pcard-bottom"><p class="pprice">Rp80.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Kurupuk sangrai</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Lanting</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Mie lidi</p></div><div class="pcard-bottom"><p class="pprice">Rp5.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Noga</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Opak</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍯</div><p class="pname">Intip madu</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🌽</div><p class="pname">Jagong marning</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍘</div><p class="pname">Kerupuk buah</p></div><div class="pcard-bottom"><p class="pprice">Rp13.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍪</div><p class="pname">Kolontong</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍪</div><p class="pname">Kolontong kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp7.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🔥</div><p class="pname">Kompor</p></div><div class="pcard-bottom"><p class="pprice">Rp30.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍳</div><p class="pname">Kompor fullset</p></div><div class="pcard-bottom"><p class="pprice">Rp80.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍘</div><p class="pname">Kurupuk sangrai</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🥨</div><p class="pname">Lanting</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍜</div><p class="pname">Mie lidi</p></div><div class="pcard-bottom"><p class="pprice">Rp5.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍬</div><p class="pname">Noga</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🫓</div><p class="pname">Opak</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
         </div>
       </section>
 
@@ -431,16 +432,16 @@
           </div>
         </div>
         <div class="card-grid">
-          <article class="pcard"><div class="pcard-top"><p class="pname">Pala</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Pie susu</p></div><div class="pcard-bottom"><p class="pprice">Rp19.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Sale</p></div><div class="pcard-bottom"><p class="pprice">Rp8.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Seblak</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Simping</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Subadra</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Tahu bulat</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Tempe</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Teng-teng jipang</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Teng-teng warna</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🌰</div><p class="pname">Pala</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🥧</div><p class="pname">Pie susu</p></div><div class="pcard-bottom"><p class="pprice">Rp19.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍌</div><p class="pname">Sale</p></div><div class="pcard-bottom"><p class="pprice">Rp8.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍲</div><p class="pname">Seblak</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍘</div><p class="pname">Simping</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🫓</div><p class="pname">Subadra</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🧆</div><p class="pname">Tahu bulat</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🫘</div><p class="pname">Tempe</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍡</div><p class="pname">Teng-teng jipang</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍭</div><p class="pname">Teng-teng warna</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
           <!-- 2 kartu kosong agar grid 4×3 tetap konsisten -->
           <div class="pcard-ghost"></div>
           <div class="pcard-ghost"></div>

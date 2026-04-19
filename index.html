@@ -201,7 +201,34 @@
         flex-direction: column;
         overflow: hidden;
         box-shadow: 0 3px 12px rgba(22,163,74,.12);
+        position: relative;
       }
+      /* Kartu dengan harga naik — border oranye */
+      .pcard.price-up {
+        border-color: #fb923c;             /* orange-400 */
+        box-shadow: 0 3px 14px rgba(249,115,22,.18);
+      }
+      /* Badge "Naik" di pojok kanan atas */
+      .badge-up {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: linear-gradient(135deg, #f97316, #ea580c);  /* orange-500 → orange-600 */
+        color: #fff;
+        font-size: clamp(.55rem, 1.2vh, .8rem);
+        font-weight: 800;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        padding: .22rem .55rem;
+        border-bottom-left-radius: .65rem;
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+        line-height: 1;
+        z-index: 2;
+        box-shadow: -1px 1px 6px rgba(234,88,12,.3);
+      }
+      .badge-up svg { width: clamp(.6rem,1.3vh,.9rem); height: clamp(.6rem,1.3vh,.9rem); flex-shrink:0; }
       /* Area nama + emoji */
       .pcard-top {
         flex: 1;
@@ -251,6 +278,17 @@
         letter-spacing: .02em;
         color: #c2410c;                    /* orange-700 */
         line-height: 1;
+      }
+      /* Harga lama dicoret (hanya muncul di kartu price-up) */
+      .pprice-old {
+        font-size: clamp(.65rem, 1.5vh, 1.1rem);
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        color: #9ca3af;                    /* gray-400 */
+        text-decoration: line-through;
+        text-decoration-color: #f97316;    /* orange-500 */
+        line-height: 1;
+        margin-left: .35rem;
       }
 
       /* Kartu kosong (placeholder) agar grid tetap penuh */
@@ -396,7 +434,11 @@
         <div class="card-grid">
           <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍯</div><p class="pname">Intip madu</p></div><div class="pcard-bottom"><p class="pprice">Rp 12.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🌽</div><p class="pname">Jagong marning</p></div><div class="pcard-bottom"><p class="pprice">Rp 10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍘</div><p class="pname">Kerupuk buah</p></div><div class="pcard-bottom"><p class="pprice">Rp 13.000</p></div></article>
+          <article class="pcard price-up">
+            <span class="badge-up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>Naik</span>
+            <div class="pcard-top"><div class="pcard-emoji">🍘</div><p class="pname">Kerupuk buah</p></div>
+            <div class="pcard-bottom"><p class="pprice">Rp 13.000</p><span class="pprice-old">Rp 12.000</span></div>
+          </article>
           <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍪</div><p class="pname">Kolontong</p></div><div class="pcard-bottom"><p class="pprice">Rp 14.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🍪</div><p class="pname">Kolontong kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp 7.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><div class="pcard-emoji">🔥</div><p class="pname">Kompor</p></div><div class="pcard-bottom"><p class="pprice">Rp 30.000</p></div></article>

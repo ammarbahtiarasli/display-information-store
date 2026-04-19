@@ -354,7 +354,7 @@
         </div>
       </div>
       <div class="header-right">
-        <p id="page-indicator" class="page-pill" aria-live="polite">1 / 3</p>
+        <p id="page-indicator" class="page-pill" aria-live="polite">Halaman 1 / 3</p>
         <div class="clock-box">
           <span class="clock-date" id="clock-date">Senin, 1 Januari 2026</span>
           <div class="clock-divider"></div>
@@ -529,7 +529,7 @@
             p.style.pointerEvents = on ? '' : 'none';
             p.setAttribute('aria-hidden', on ? 'false' : 'true');
           });
-          if (pill) pill.textContent = (i + 1) + ' / ' + n;
+          if (pill) pill.textContent = 'Halaman ' + (i + 1) + ' / ' + n;
           resetBar();
         }
         show(0);

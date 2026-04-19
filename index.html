@@ -25,46 +25,48 @@
     </script>
   </head>
   <body
-    class="flex h-dvh min-h-0 flex-col overflow-hidden bg-zinc-50 text-zinc-900 font-display antialiased selection:bg-zinc-200"
+    class="flex h-dvh min-h-0 flex-col overflow-hidden bg-gradient-to-b from-emerald-100 via-amber-50/80 to-emerald-50 font-display text-zinc-900 antialiased selection:bg-amber-200"
   >
-    <!-- Ukuran teks TV: clamp(min, vh, max) -->
-    <header class="shrink-0 border-b border-zinc-200 bg-white">
+    <!-- Header: strip hijau seperti papan nama toko -->
+    <header
+      class="shrink-0 border-b-4 border-emerald-900 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800 shadow-lg"
+    >
       <div
-        class="flex w-full flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4"
+        class="flex w-full flex-wrap items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-3.5"
       >
-        <div class="flex min-w-0 items-center gap-4">
+        <div class="flex min-w-0 items-center gap-3 sm:gap-4">
           <img
             src="https://avatars.githubusercontent.com/u/78911851?v=4"
             alt="Logo A&amp;B Product"
             width="64"
             height="64"
-            class="h-14 w-14 shrink-0 rounded-lg object-cover ring-2 ring-zinc-200 sm:h-16 sm:w-16"
+            class="h-12 w-12 shrink-0 rounded-lg border-2 border-white/40 bg-white object-cover shadow-md sm:h-14 sm:w-14"
             loading="eager"
             decoding="async"
           />
           <div class="min-w-0">
             <p
-              class="truncate text-[clamp(1.125rem,2.8vh,1.875rem)] font-semibold text-zinc-900"
+              class="truncate text-[clamp(1.1rem,2.6vh,1.85rem)] font-black uppercase tracking-wide text-white drop-shadow-sm"
             >
               A&amp;B Product
             </p>
-            <h1
-              class="truncate text-[clamp(0.875rem,2vh,1.25rem)] font-normal text-zinc-500"
+            <p
+              class="truncate text-[clamp(0.75rem,1.8vh,1.1rem)] font-medium text-emerald-100/95"
             >
-              Informasi produk &amp; harga
-            </h1>
+              Informasi harga untuk pelanggan
+            </p>
           </div>
         </div>
-        <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-4">
           <p
             id="page-indicator"
-            class="text-[clamp(0.875rem,1.8vh,1.25rem)] font-medium tabular-nums text-zinc-500"
+            class="rounded-full bg-black/25 px-3 py-1.5 text-[clamp(0.75rem,1.6vh,1.05rem)] font-bold tabular-nums text-amber-100 ring-1 ring-white/20"
             aria-live="polite"
           >
             Halaman 1 / 2
           </p>
           <span
-            class="font-mono text-[clamp(1.25rem,3.2vh,2.75rem)] font-semibold tabular-nums text-zinc-800"
+            class="rounded-lg bg-black/30 px-3 py-2 font-mono text-[clamp(1.1rem,2.8vh,2.25rem)] font-bold tabular-nums tracking-tight text-amber-300 shadow-inner ring-1 ring-white/10"
             id="clock"
             >--:--:--</span
           >
@@ -72,8 +74,8 @@
       </div>
     </header>
 
-    <main class="relative flex min-h-0 flex-1 flex-col px-3 py-2 sm:px-6 sm:py-3">
-      <!-- Halaman 1: baris 1–9 -->
+    <main class="relative flex min-h-0 flex-1 flex-col px-2 py-2 sm:px-5 sm:py-3">
+      <!-- Halaman 1 -->
       <section
         id="page-1"
         class="price-page flex min-h-0 w-full flex-1 flex-col"
@@ -81,93 +83,85 @@
         data-page="0"
       >
         <div
-          class="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] grid-rows-[auto_auto_repeat(9,minmax(0,1fr))] gap-x-3 overflow-hidden rounded-xl border-2 border-zinc-300 bg-white shadow-md sm:gap-x-6 md:gap-x-8"
+          class="retail-board grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] grid-rows-[auto_auto_repeat(9,minmax(0,1fr))] gap-x-0 overflow-hidden rounded-2xl border-[5px] border-emerald-900 bg-white shadow-2xl ring-1 ring-black/5"
         >
           <div
-            class="col-span-4 flex flex-wrap items-baseline justify-between gap-2 border-b-2 border-zinc-200 bg-zinc-50 px-4 py-3 sm:px-5"
+            class="col-span-4 flex flex-wrap items-center justify-between gap-2 bg-gradient-to-r from-red-600 via-red-600 to-red-500 px-3 py-2.5 shadow-md sm:px-5 sm:py-3"
           >
-            <h2 class="text-[clamp(1rem,2.4vh,1.75rem)] font-bold text-zinc-900">Daftar harga</h2>
-            <p class="text-[clamp(0.875rem,2vh,1.35rem)] text-zinc-500">19 April 2026</p>
+            <h2
+              class="text-[clamp(0.95rem,2.2vh,1.65rem)] font-black uppercase tracking-[0.12em] text-white drop-shadow-sm"
+            >
+              Harga hari ini
+            </h2>
+            <p
+              class="rounded bg-white/95 px-2.5 py-1 text-[clamp(0.7rem,1.6vh,1rem)] font-bold text-red-700 shadow-sm"
+            >
+              19 April 2026
+            </p>
           </div>
-          <div
-            class="cell-h flex items-center border-b-2 border-zinc-200 bg-zinc-50 px-3 py-2 font-bold text-zinc-900 sm:px-4"
-          >
-            Nama
-          </div>
-          <div
-            class="cell-h flex items-center border-b-2 border-zinc-200 bg-zinc-50 px-3 py-2 font-bold text-zinc-900 sm:px-4"
-          >
-            Harga
-          </div>
-          <div
-            class="cell-h flex items-center border-b-2 border-zinc-200 bg-zinc-50 px-3 py-2 font-bold text-zinc-900 sm:px-4"
-          >
-            Nama
-          </div>
-          <div
-            class="cell-h flex items-center border-b-2 border-zinc-200 bg-zinc-50 px-3 py-2 font-bold text-zinc-900 sm:px-4"
-          >
-            Harga
-          </div>
+          <div class="cell-h">Produk</div>
+          <div class="cell-h cell-h-price">Harga</div>
+          <div class="cell-h">Produk</div>
+          <div class="cell-h cell-h-price">Harga</div>
 
           <div class="contents">
-            <div class="cell-name">Aromanis</div>
-            <div class="cell-price">Rp12.000</div>
-            <div class="cell-name">Kompor</div>
-            <div class="cell-price">Rp30.000</div>
+            <div class="cell-name cell-zebra-0">Aromanis</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp12.000</span></div>
+            <div class="cell-name cell-zebra-0">Kompor</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp30.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Bakpia isi 12</div>
-            <div class="cell-price">Rp11.000</div>
-            <div class="cell-name">Kompor fullset</div>
-            <div class="cell-price">Rp80.000</div>
+            <div class="cell-name cell-zebra-1">Bakpia isi 12</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp11.000</span></div>
+            <div class="cell-name cell-zebra-1">Kompor fullset</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp80.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Bakpia isi 15</div>
-            <div class="cell-price">Rp14.000</div>
-            <div class="cell-name">Kurupuk sangrai</div>
-            <div class="cell-price">Rp10.000</div>
+            <div class="cell-name cell-zebra-0">Bakpia isi 15</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp14.000</span></div>
+            <div class="cell-name cell-zebra-0">Kurupuk sangrai</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Basreng</div>
-            <div class="cell-price">Rp10.000</div>
-            <div class="cell-name">Lanting</div>
-            <div class="cell-price">Rp9.000</div>
+            <div class="cell-name cell-zebra-1">Basreng</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
+            <div class="cell-name cell-zebra-1">Lanting</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp9.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Boboko</div>
-            <div class="cell-price">Rp11.000</div>
-            <div class="cell-name">Mie lidi</div>
-            <div class="cell-price">Rp5.000</div>
+            <div class="cell-name cell-zebra-0">Boboko</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp11.000</span></div>
+            <div class="cell-name cell-zebra-0">Mie lidi</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp5.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Brem</div>
-            <div class="cell-price">Rp11.000</div>
-            <div class="cell-name">Noga</div>
-            <div class="cell-price">Rp9.000</div>
+            <div class="cell-name cell-zebra-1">Brem</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp11.000</span></div>
+            <div class="cell-name cell-zebra-1">Noga</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp9.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Coklat kecil</div>
-            <div class="cell-price">Rp8.000</div>
-            <div class="cell-name">Opak</div>
-            <div class="cell-price">Rp14.000</div>
+            <div class="cell-name cell-zebra-0">Coklat kecil</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp8.000</span></div>
+            <div class="cell-name cell-zebra-0">Opak</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp14.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Coklat besar</div>
-            <div class="cell-price">Rp7.000</div>
-            <div class="cell-name">Pala</div>
-            <div class="cell-price">Rp10.000</div>
+            <div class="cell-name cell-zebra-1">Coklat besar</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp7.000</span></div>
+            <div class="cell-name cell-zebra-1">Pala</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Coklat kerikil</div>
-            <div class="cell-price">Rp9.000</div>
-            <div class="cell-name">Pie susu</div>
-            <div class="cell-price">Rp19.000</div>
+            <div class="cell-name cell-zebra-0">Coklat kerikil</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp9.000</span></div>
+            <div class="cell-name cell-zebra-0">Pie susu</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp19.000</span></div>
           </div>
         </div>
       </section>
 
-      <!-- Halaman 2: baris 10–17 -->
+      <!-- Halaman 2 -->
       <section
         id="page-2"
         class="price-page hidden min-h-0 w-full flex-1 flex-col"
@@ -175,131 +169,178 @@
         data-page="1"
       >
         <div
-          class="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] grid-rows-[auto_auto_repeat(8,minmax(0,1fr))] gap-x-3 overflow-hidden rounded-xl border-2 border-zinc-300 bg-white shadow-md sm:gap-x-6 md:gap-x-8"
+          class="retail-board grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] grid-rows-[auto_auto_repeat(8,minmax(0,1fr))] gap-x-0 overflow-hidden rounded-2xl border-[5px] border-emerald-900 bg-white shadow-2xl ring-1 ring-black/5"
         >
           <div
-            class="col-span-4 flex flex-wrap items-baseline justify-between gap-2 border-b-2 border-zinc-200 bg-zinc-50 px-4 py-3 sm:px-5"
+            class="col-span-4 flex flex-wrap items-center justify-between gap-2 bg-gradient-to-r from-red-600 via-red-600 to-red-500 px-3 py-2.5 shadow-md sm:px-5 sm:py-3"
           >
-            <h2 class="text-[clamp(1rem,2.4vh,1.75rem)] font-bold text-zinc-900">Daftar harga</h2>
-            <p class="text-[clamp(0.875rem,2vh,1.35rem)] text-zinc-500">19 April 2026</p>
+            <h2
+              class="text-[clamp(0.95rem,2.2vh,1.65rem)] font-black uppercase tracking-[0.12em] text-white drop-shadow-sm"
+            >
+              Harga hari ini
+            </h2>
+            <p
+              class="rounded bg-white/95 px-2.5 py-1 text-[clamp(0.7rem,1.6vh,1rem)] font-bold text-red-700 shadow-sm"
+            >
+              19 April 2026
+            </p>
           </div>
-          <div
-            class="cell-h flex items-center border-b-2 border-zinc-200 bg-zinc-50 px-3 py-2 font-bold text-zinc-900 sm:px-4"
-          >
-            Nama
-          </div>
-          <div
-            class="cell-h flex items-center border-b-2 border-zinc-200 bg-zinc-50 px-3 py-2 font-bold text-zinc-900 sm:px-4"
-          >
-            Harga
-          </div>
-          <div
-            class="cell-h flex items-center border-b-2 border-zinc-200 bg-zinc-50 px-3 py-2 font-bold text-zinc-900 sm:px-4"
-          >
-            Nama
-          </div>
-          <div
-            class="cell-h flex items-center border-b-2 border-zinc-200 bg-zinc-50 px-3 py-2 font-bold text-zinc-900 sm:px-4"
-          >
-            Harga
-          </div>
+          <div class="cell-h">Produk</div>
+          <div class="cell-h cell-h-price">Harga</div>
+          <div class="cell-h">Produk</div>
+          <div class="cell-h cell-h-price">Harga</div>
 
           <div class="contents">
-            <div class="cell-name">Emping</div>
-            <div class="cell-price">Rp10.000</div>
-            <div class="cell-name">Sale</div>
-            <div class="cell-price">Rp8.000</div>
+            <div class="cell-name cell-zebra-0">Emping</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
+            <div class="cell-name cell-zebra-0">Sale</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp8.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Grubi kremes besar</div>
-            <div class="cell-price">Rp16.000</div>
-            <div class="cell-name">Seblak</div>
-            <div class="cell-price">Rp10.000</div>
+            <div class="cell-name cell-zebra-1">Grubi kremes besar</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp16.000</span></div>
+            <div class="cell-name cell-zebra-1">Seblak</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Grubi kremes kecil</div>
-            <div class="cell-price">Rp12.000</div>
-            <div class="cell-name">Simping</div>
-            <div class="cell-price">Rp9.000</div>
+            <div class="cell-name cell-zebra-0">Grubi kremes kecil</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp12.000</span></div>
+            <div class="cell-name cell-zebra-0">Simping</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp9.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Intip madu</div>
-            <div class="cell-price">Rp12.000</div>
-            <div class="cell-name">Subadra</div>
-            <div class="cell-price">Rp10.000</div>
+            <div class="cell-name cell-zebra-1">Intip madu</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp12.000</span></div>
+            <div class="cell-name cell-zebra-1">Subadra</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Jagong marning</div>
-            <div class="cell-price">Rp10.000</div>
-            <div class="cell-name">Tahu bulat</div>
-            <div class="cell-price">Rp10.000</div>
+            <div class="cell-name cell-zebra-0">Jagong marning</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
+            <div class="cell-name cell-zebra-0">Tahu bulat</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Kerupuk buah</div>
-            <div class="cell-price">Rp13.000</div>
-            <div class="cell-name">Tempe</div>
-            <div class="cell-price">Rp10.000</div>
+            <div class="cell-name cell-zebra-1">Kerupuk buah</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp13.000</span></div>
+            <div class="cell-name cell-zebra-1">Tempe</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Kolontong</div>
-            <div class="cell-price">Rp14.000</div>
-            <div class="cell-name">Teng-teng jipang</div>
-            <div class="cell-price">Rp10.000</div>
+            <div class="cell-name cell-zebra-0">Kolontong</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp14.000</span></div>
+            <div class="cell-name cell-zebra-0">Teng-teng jipang</div>
+            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
           </div>
           <div class="contents">
-            <div class="cell-name">Kolontong kecil</div>
-            <div class="cell-price">Rp7.000</div>
-            <div class="cell-name">Teng-teng warna</div>
-            <div class="cell-price">Rp11.000</div>
+            <div class="cell-name cell-zebra-1">Kolontong kecil</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp7.000</span></div>
+            <div class="cell-name cell-zebra-1">Teng-teng warna</div>
+            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp11.000</span></div>
           </div>
         </div>
       </section>
 
       <footer
-        class="shrink-0 pt-2 text-center text-[clamp(0.7rem,1.5vh,1rem)] leading-snug text-zinc-500"
+        class="shrink-0 pt-2 text-center text-[clamp(0.65rem,1.4vh,0.95rem)] font-semibold leading-snug text-emerald-900/80 drop-shadow-sm"
       >
-        <p>Harga dapat berubah sewaktu-waktu. Informasi di kasir mengikat.</p>
+        <p class="rounded-md bg-white/60 px-2 py-1 shadow-sm ring-1 ring-emerald-900/10">
+          Harga dapat berubah sewaktu-waktu · Informasi di kasir mengikat
+        </p>
       </footer>
     </main>
 
     <style>
+      .retail-board {
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.4) inset,
+          0 25px 50px -12px rgba(6, 78, 59, 0.35);
+      }
       .cell-h {
-        font-size: clamp(1rem, 2.2vh, 1.65rem);
+        display: flex;
+        align-items: center;
+        border-bottom: 3px solid #065f46;
+        background: linear-gradient(180deg, #059669 0%, #047857 55%, #065f46 100%);
+        padding: 0.35rem 0.65rem;
+        font-size: clamp(0.95rem, 2vh, 1.5rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #fff;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+      }
+      @media (min-width: 640px) {
+        .cell-h {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+      .cell-h-price {
+        justify-content: center;
+        background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%);
+        border-bottom-color: #7f1d1d;
+        border-left: 2px solid rgba(255, 255, 255, 0.25);
+        border-right: 2px solid rgba(0, 0, 0, 0.15);
       }
       .cell-name {
         display: flex;
         min-height: 0;
         min-width: 0;
         align-items: center;
-        border-bottom: 1px solid rgb(244 244 245);
-        padding: 0.25rem 0.75rem;
-        font-size: clamp(1.05rem, 2.8vh, 2.1rem);
-        font-weight: 600;
-        line-height: 1.15;
+        border-bottom: 2px solid #d1fae5;
+        padding: 0.2rem 0.6rem;
+        font-size: clamp(1rem, 2.65vh, 2rem);
+        font-weight: 800;
+        line-height: 1.12;
         text-transform: uppercase;
-        color: rgb(39 39 42);
+        color: #18181b;
+        letter-spacing: 0.02em;
+      }
+      .cell-name.cell-zebra-0 {
+        background: linear-gradient(90deg, #ffffff 0%, #f0fdf4 100%);
+      }
+      .cell-name.cell-zebra-1 {
+        background: linear-gradient(90deg, #ecfdf5 0%, #d1fae5 100%);
       }
       @media (min-width: 640px) {
         .cell-name {
           padding-left: 1rem;
-          padding-right: 1rem;
+          padding-right: 0.75rem;
         }
       }
       .cell-price {
         display: flex;
         min-height: 0;
         align-items: center;
-        border-bottom: 1px solid rgb(244 244 245);
-        padding: 0.25rem 0.75rem;
-        font-size: clamp(1.05rem, 2.8vh, 2.1rem);
-        font-weight: 700;
+        justify-content: center;
+        border-bottom: 2px solid #fecaca;
+        padding: 0.2rem 0.5rem;
+      }
+      .cell-price.cell-zebra-0 {
+        background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 40%, #fde68a 100%);
+      }
+      .cell-price.cell-zebra-1 {
+        background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 45%, #fed7aa 100%);
+      }
+      .price-inner {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        border-radius: 0.35rem;
+        border: 2px solid #b91c1c;
+        background: #fff;
+        padding: 0.1rem 0.35rem;
+        font-size: clamp(0.95rem, 2.55vh, 1.95rem);
+        font-weight: 900;
         font-variant-numeric: tabular-nums;
-        color: rgb(24 24 27);
+        color: #b91c1c;
+        letter-spacing: 0.02em;
+        box-shadow: 0 2px 0 #991b1b, 0 4px 8px rgba(185, 28, 28, 0.15);
       }
       @media (min-width: 640px) {
-        .cell-price {
-          padding-left: 1rem;
-          padding-right: 1rem;
+        .price-inner {
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
         }
       }
     </style>

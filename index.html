@@ -43,12 +43,12 @@
       }
       .logo-wrap { display: flex; align-items: center; gap: .85rem; min-width: 0; }
       .logo-img {
-        width: 52px; height: 52px;
-        border-radius: .75rem;
+        width: 64px; height: 64px;
+        border-radius: .85rem;
         object-fit: cover;
-        border: 2.5px solid #16a34a;        /* green-600 */
+        border: 3px solid #16a34a;          /* green-600 */
         flex-shrink: 0;
-        box-shadow: 0 2px 8px rgba(22,163,74,.2);
+        box-shadow: 0 3px 12px rgba(22,163,74,.25);
       }
       .brand-name {
         font-weight: 800;
@@ -59,22 +59,22 @@
         font-size: clamp(1.1rem, 2.8vh, 2rem);
       }
       .brand-sub {
-        font-size: clamp(.68rem, 1.45vh, .95rem);
+        font-size: clamp(.8rem, 1.7vh, 1.1rem);
         font-weight: 600;
         color: #000000;
         letter-spacing: .04em;
-        margin-top: .1rem;
+        margin-top: .15rem;
       }
 
       /* Kanan header */
       .header-right { display: flex; align-items: center; gap: .85rem; flex-shrink: 0; }
       .page-pill {
         background: #dcfce7;                /* green-100 */
-        border: 1.5px solid #16a34a;        /* green-600 */
+        border: 2px solid #16a34a;          /* green-600 */
         border-radius: 999px;
-        padding: .28rem .9rem;
-        font-size: clamp(.72rem, 1.5vh, .95rem);
-        font-weight: 700;
+        padding: .35rem 1.1rem;
+        font-size: clamp(.85rem, 1.8vh, 1.15rem);
+        font-weight: 800;
         color: #15803d;                     /* green-700 */
         display: none;
         white-space: nowrap;
@@ -115,20 +115,8 @@
         letter-spacing: .05em;
         font-variant-numeric: tabular-nums;
       }
-      .clock-day-badge {
-        font-size: clamp(.62rem, 1.3vh, .85rem);
-        font-weight: 800;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        color: #fff;
-        background: #f97316;               /* orange-500 */
-        border-radius: .4rem;
-        padding: .15rem .45rem;
-        line-height: 1.1;
-      }
-
       /* ── Progress bar ── */
-      .prog-wrap { height: 4px; background: #bbf7d0; flex-shrink: 0; }  /* green-200 */
+      .prog-wrap { height: 6px; background: #bbf7d0; flex-shrink: 0; }  /* green-200 */
       #prog-bar {
         height: 100%;
         background: linear-gradient(90deg, #16a34a, #f97316);  /* green-600 → orange-500 */
@@ -178,10 +166,9 @@
         gap: .75rem;
       }
       .section-date {
-        font-size: clamp(.65rem, 1.3vh, .9rem);
+        font-size: clamp(.72rem, 1.5vh, 1rem);
         font-weight: 600;
-        color: #4ade80;                     /* green-400 (muted on white) → use 600 */
-        color: #16a34a;
+        color: #16a34a;                    /* green-600 */
       }
       .section-page-badge {
         background: #dcfce7;               /* green-100 */
@@ -208,12 +195,12 @@
       /* ── Kartu produk ── */
       .pcard {
         background: #ffffff;
-        border: 1.5px solid #bbf7d0;       /* green-200 */
+        border: 2px solid #86efac;         /* green-300 — lebih kontras */
         border-radius: 1rem;
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(22,163,74,.08);
+        box-shadow: 0 3px 12px rgba(22,163,74,.12);
       }
       /* Area nama + emoji */
       .pcard-top {
@@ -268,8 +255,8 @@
 
       /* Kartu kosong (placeholder) agar grid tetap penuh */
       .pcard-ghost {
-        background: rgba(240,253,244,.5);  /* green-50/50 */
-        border: 1.5px dashed #bbf7d0;      /* green-200 */
+        background: transparent;
+        border: none;
         border-radius: 1rem;
       }
 
@@ -347,7 +334,7 @@
     <header class="top-bar">
       <div class="logo-wrap">
         <img src="https://avatars.githubusercontent.com/u/78911851?v=4"
-             alt="Logo A&B Product" width="52" height="52"
+             alt="Logo A&B Product" width="64" height="64"
              class="logo-img" loading="eager" decoding="async" />
         <div>
           <p class="brand-name">A&amp;B Product</p>
@@ -377,7 +364,7 @@
         <div class="section-bar">
           <span class="section-title">Daftar Harga</span>
           <div class="section-meta">
-            <span class="section-date">19 April 2026</span>
+            <span class="section-date" id="section-date-1"></span>
             <span class="section-page-badge">1 / 3</span>
           </div>
         </div>
@@ -402,7 +389,7 @@
         <div class="section-bar">
           <span class="section-title">Daftar Harga</span>
           <div class="section-meta">
-            <span class="section-date">19 April 2026</span>
+            <span class="section-date" id="section-date-2"></span>
             <span class="section-page-badge">2 / 3</span>
           </div>
         </div>
@@ -427,7 +414,7 @@
         <div class="section-bar">
           <span class="section-title">Daftar Harga</span>
           <div class="section-meta">
-            <span class="section-date">19 April 2026</span>
+            <span class="section-date" id="section-date-3"></span>
             <span class="section-page-badge">3 / 3</span>
           </div>
         </div>
@@ -489,19 +476,26 @@
 
       /* ── Jam & tanggal ── */
       function pad(n) { return String(n).padStart(2, '0'); }
-      var HARI   = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
-      var HARI_S = ['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
-      var BULAN  = ['Januari','Februari','Maret','April','Mei','Juni',
-                    'Juli','Agustus','September','Oktober','November','Desember'];
+      var HARI  = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+      var BULAN = ['Januari','Februari','Maret','April','Mei','Juni',
+                   'Juli','Agustus','September','Oktober','November','Desember'];
+
+      function formatTanggal(d) {
+        return HARI[d.getDay()] + ', ' + d.getDate() + ' ' + BULAN[d.getMonth()] + ' ' + d.getFullYear();
+      }
+
       function tickClock() {
-        var d   = new Date();
-        var dow = d.getDay();
+        var d = new Date();
         var elTime = document.getElementById('clock');
         var elDate = document.getElementById('clock-date');
-        var elDay  = document.getElementById('clock-day');
+        var tanggal = formatTanggal(d);
         if (elTime) elTime.textContent = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
-        if (elDate) elDate.textContent = HARI[dow] + ', ' + d.getDate() + ' ' + BULAN[d.getMonth()] + ' ' + d.getFullYear();
-        if (elDay)  elDay.textContent  = HARI_S[dow];
+        if (elDate) elDate.textContent = tanggal;
+        /* Sync tanggal di tiap section bar */
+        [1,2,3].forEach(function(i) {
+          var el = document.getElementById('section-date-' + i);
+          if (el) el.textContent = tanggal;
+        });
       }
       tickClock();
       setInterval(tickClock, 1000);

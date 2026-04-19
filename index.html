@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,138 +24,455 @@
       };
     </script>
   </head>
-  <body class="min-h-screen bg-zinc-50 text-zinc-900 font-display antialiased selection:bg-zinc-200">
-    <header class="sticky top-0 z-20 border-b border-zinc-200 bg-white">
+  <body
+    class="flex h-dvh min-h-0 flex-col overflow-hidden bg-zinc-50 text-zinc-900 font-display antialiased selection:bg-zinc-200"
+  >
+    <header class="shrink-0 border-b border-zinc-200 bg-white">
       <div
-        class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6"
+        class="flex w-full flex-wrap items-center justify-between gap-3 px-4 py-2 sm:px-6 sm:py-3"
       >
         <div class="flex min-w-0 items-center gap-3">
           <img
             src="https://avatars.githubusercontent.com/u/78911851?v=4"
             alt="Logo A&amp;B Product"
-            width="40"
-            height="40"
-            class="h-10 w-10 shrink-0 rounded-md object-cover ring-1 ring-zinc-200"
+            width="48"
+            height="48"
+            class="h-11 w-11 shrink-0 rounded-md object-cover ring-1 ring-zinc-200 sm:h-12 sm:w-12"
             loading="eager"
             decoding="async"
           />
           <div class="min-w-0">
-            <p class="truncate text-sm font-semibold text-zinc-900">A&amp;B Product</p>
-            <h1 class="truncate text-xs font-normal text-zinc-500">Informasi produk &amp; harga</h1>
+            <p class="truncate text-base font-semibold text-zinc-900 sm:text-lg">A&amp;B Product</p>
+            <h1 class="truncate text-xs font-normal text-zinc-500 sm:text-sm">
+              Informasi produk &amp; harga
+            </h1>
           </div>
         </div>
         <span
-          class="font-mono text-sm tabular-nums text-zinc-600"
+          class="font-mono text-base tabular-nums text-zinc-600 sm:text-lg"
           id="clock"
           >--:--:--</span
         >
       </div>
     </header>
 
-    <main class="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10">
+    <main class="flex min-h-0 flex-1 flex-col px-3 py-2 sm:px-5 sm:py-3">
       <section
-        class="mb-10 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8"
-        aria-labelledby="featured-heading"
+        class="flex min-h-0 flex-1 flex-col"
+        aria-labelledby="grid-heading"
       >
-        <div class="grid gap-8 lg:grid-cols-12 lg:gap-10">
+        <div
+          class="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] grid-rows-[auto_auto_repeat(17,minmax(0,1fr))] gap-x-2 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm sm:gap-x-4 md:gap-x-6"
+        >
           <div
-            class="flex min-h-[200px] items-center justify-center rounded-lg border border-dashed border-zinc-200 bg-zinc-50 lg:col-span-5"
+            class="col-span-4 flex flex-wrap items-baseline justify-between gap-2 border-b border-zinc-200 bg-zinc-50 px-3 py-2 sm:px-4"
           >
-            <div class="text-center">
-              <span class="text-5xl opacity-80" aria-hidden="true">🛒</span>
-              <p class="mt-3 text-xs text-zinc-500">Gambar produk</p>
-            </div>
-          </div>
-          <div class="flex flex-col justify-center lg:col-span-7">
-            <h2 id="featured-heading" class="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
-              Susu UHT Full Cream 1 L
+            <h2 id="grid-heading" class="text-sm font-semibold text-zinc-900 sm:text-base">
+              Daftar harga
             </h2>
-            <p class="mt-2 text-sm text-zinc-500">Harga berlaku di semua cabang · Termasuk PPN</p>
-            <p class="mt-6 text-4xl font-semibold tabular-nums tracking-tight text-zinc-900 sm:text-5xl">
-              Rp18.900
-            </p>
-            <div class="mt-6 flex flex-wrap gap-2 text-xs text-zinc-500">
-              <span class="rounded-md bg-zinc-100 px-2.5 py-1 font-mono">SKU 8998866201234</span>
+            <p class="text-xs text-zinc-500 sm:text-sm">19 April 2026</p>
+          </div>
+
+          <div
+            class="flex items-center border-b border-zinc-200 bg-zinc-50 px-2 py-1 text-[clamp(0.65rem,1.2vh,0.875rem)] font-semibold text-zinc-900 sm:px-3"
+          >
+            Nama
+          </div>
+          <div
+            class="flex items-center border-b border-zinc-200 bg-zinc-50 px-2 py-1 text-[clamp(0.65rem,1.2vh,0.875rem)] font-semibold text-zinc-900 sm:px-3"
+          >
+            Harga
+          </div>
+          <div
+            class="flex items-center border-b border-zinc-200 bg-zinc-50 px-2 py-1 text-[clamp(0.65rem,1.2vh,0.875rem)] font-semibold text-zinc-900 sm:px-3"
+          >
+            Nama
+          </div>
+          <div
+            class="flex items-center border-b border-zinc-200 bg-zinc-50 px-2 py-1 text-[clamp(0.65rem,1.2vh,0.875rem)] font-semibold text-zinc-900 sm:px-3"
+          >
+            Harga
+          </div>
+
+          <!-- Baris data: gunakan display:contents agar baris ikut grid utama -->
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Aromanis
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp12.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Kompor
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp30.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Bakpia isi 12
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp11.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Kompor fullset
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp80.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Bakpia isi 15
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp14.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Kurupuk sangrai
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Basreng
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Lanting
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp9.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Boboko
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp11.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Mie lidi
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp5.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Brem
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp11.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Noga
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp9.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Coklat kecil
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp8.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Opak
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp14.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Coklat besar
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp7.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Pala
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Coklat kerikil
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp9.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Pie susu
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp19.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Emping
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Sale
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp8.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Grubi kremes besar
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp16.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Seblak
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Grubi kremes kecil
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp12.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Simping
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp9.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Intip madu
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp12.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Subadra
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Jagong marning
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Tahu bulat
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Kerupuk buah
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp13.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Tempe
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Kolontong
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp14.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Teng-teng jipang
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp10.000
+            </div>
+          </div>
+          <div class="contents">
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Kolontong kecil
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp7.000
+            </div>
+            <div
+              class="flex min-h-0 min-w-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] uppercase leading-tight text-zinc-800 sm:px-3"
+            >
+              Teng-teng warna
+            </div>
+            <div
+              class="flex min-h-0 items-center border-b border-zinc-100 px-2 py-0.5 text-[clamp(0.65rem,1.35vh,1rem)] font-medium tabular-nums text-zinc-900 sm:px-3"
+            >
+              Rp11.000
             </div>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="grid-heading">
-        <div class="mb-5 flex flex-wrap items-baseline justify-between gap-2">
-          <h2 id="grid-heading" class="text-base font-semibold text-zinc-900">Daftar harga</h2>
-          <p class="text-sm text-zinc-500">19 April 2026</p>
-        </div>
-        <div class="grid gap-3 sm:grid-cols-2" role="list">
-          <article
-            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
-            role="listitem"
-          >
-            <div class="min-w-0">
-              <h3 class="font-medium text-zinc-900">Beras Premium 5 kg</h3>
-              <p class="mt-0.5 text-sm text-zinc-500">Kemasan segel</p>
-            </div>
-            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp64.500</p>
-          </article>
-
-          <article
-            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
-            role="listitem"
-          >
-            <div class="min-w-0">
-              <h3 class="font-medium text-zinc-900">Telur Ayam 1 kg</h3>
-              <p class="mt-0.5 text-sm text-zinc-500">±16 butir</p>
-            </div>
-            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp28.000</p>
-          </article>
-
-          <article
-            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
-            role="listitem"
-          >
-            <div class="min-w-0">
-              <h3 class="font-medium text-zinc-900">Minyak Goreng 2 L</h3>
-              <p class="mt-0.5 text-sm text-zinc-500">Refill</p>
-            </div>
-            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp31.900</p>
-          </article>
-
-          <article
-            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
-            role="listitem"
-          >
-            <div class="min-w-0">
-              <h3 class="font-medium text-zinc-900">Snack Cokelat 150 g</h3>
-              <p class="mt-0.5 text-sm text-zinc-500">Kemasan</p>
-            </div>
-            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp12.500</p>
-          </article>
-
-          <article
-            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
-            role="listitem"
-          >
-            <div class="min-w-0">
-              <h3 class="font-medium text-zinc-900">Jus Kotak 250 ml</h3>
-              <p class="mt-0.5 text-sm text-zinc-500">Kemasan karton</p>
-            </div>
-            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp5.000</p>
-          </article>
-
-          <article
-            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
-            role="listitem"
-          >
-            <div class="min-w-0">
-              <h3 class="font-medium text-zinc-900">Sabun Cuci 800 ml</h3>
-              <p class="mt-0.5 text-sm text-zinc-500">Botol</p>
-            </div>
-            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp18.200</p>
-          </article>
-        </div>
-      </section>
-
-      <footer class="mt-10 border-t border-zinc-200 pt-6 text-center text-xs text-zinc-500">
+      <footer class="shrink-0 pt-1 text-center text-[10px] leading-tight text-zinc-500 sm:text-xs">
         <p>Harga dapat berubah sewaktu-waktu. Informasi di kasir mengikat.</p>
       </footer>
     </main>

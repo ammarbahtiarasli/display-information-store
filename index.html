@@ -8,204 +8,175 @@
     <link rel="icon" href="https://avatars.githubusercontent.com/u/78911851?v=4" />
     <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/78911851?v=4" />
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-
-  <body class="flex h-dvh min-h-0 flex-col overflow-hidden bg-[#0a1a0a] font-sans text-white antialiased">
-
-    <!-- ══════════ HEADER ══════════ -->
-    <header class="shrink-0 flex items-center justify-between gap-4 px-5 py-3 sm:px-8 sm:py-3.5"
-            style="background:linear-gradient(95deg,#14532d 0%,#166534 50%,#15803d 100%);border-bottom:4px solid #ea7c14;">
-      <div class="flex min-w-0 items-center gap-4">
-        <img src="https://avatars.githubusercontent.com/u/78911851?v=4"
-             alt="Logo A&B" width="60" height="60"
-             class="h-13 w-13 shrink-0 rounded-xl object-cover shadow-xl sm:h-14 sm:w-14"
-             style="border:3px solid #ea7c14;"
-             loading="eager" decoding="async" />
-        <div class="min-w-0">
-          <p class="truncate font-black uppercase leading-none tracking-widest text-white"
-             style="font-size:clamp(1.25rem,3vh,2.2rem);">A&amp;B Product</p>
-          <p class="truncate font-semibold leading-snug" style="font-size:clamp(0.72rem,1.5vh,1rem);color:#fb923c;">
-            Informasi Harga Produk
-          </p>
-        </div>
-      </div>
-      <div class="flex shrink-0 items-center gap-3 sm:gap-5">
-        <span id="page-indicator"
-              class="hidden sm:flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-bold tabular-nums"
-              style="background:rgba(0,0,0,.4);font-size:clamp(0.8rem,1.7vh,1.15rem);color:#fde68a;"
-              aria-live="polite">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#ea7c14"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/></svg>
-          <span id="page-label">1 / 2</span>
-        </span>
-        <div class="flex items-center gap-2 rounded-xl px-4 py-2"
-             style="background:rgba(0,0,0,.45);border:2px solid #ea7c14;">
-          <span class="font-bold tracking-widest" style="font-size:clamp(0.65rem,1.3vh,0.85rem);color:#ea7c14;">JAM</span>
-          <span id="clock" class="font-mono font-black tabular-nums leading-none text-white"
-                style="font-size:clamp(1.2rem,3vh,2.4rem);letter-spacing:.05em;">00:00:00</span>
-        </div>
-      </div>
-    </header>
-
-    <!-- Progress bar -->
-    <div class="shrink-0 h-1.5 w-full" style="background:rgba(255,255,255,.06);">
-      <div id="prog-bar" style="width:0%;height:100%;background:linear-gradient(90deg,#ea7c14,#f59e0b);transition:none;"></div>
-    </div>
-
-    <!-- ══════════ KONTEN HALAMAN ══════════ -->
-    <main class="relative min-h-0 flex-1 overflow-hidden">
-
-      <!-- ── Halaman 1: 18 produk, 3 kolom × 6 baris ── -->
-      <section id="page-1" class="price-page" aria-hidden="false">
-        <div class="page-inner">
-          <!-- Judul halaman -->
-          <div class="page-title-bar">
-            <span class="page-title-text">Daftar Harga</span>
-            <span class="page-date">19 April 2026</span>
-          </div>
-          <!-- Grid kartu: 3 × 6 -->
-          <div class="card-grid" style="--cols:3;--rows:6;">
-            <article class="pcard"><p class="pname">Aromanis</p><p class="pprice">Rp12.000</p></article>
-            <article class="pcard"><p class="pname">Kompor</p><p class="pprice">Rp30.000</p></article>
-            <article class="pcard"><p class="pname">Bakpia isi 12</p><p class="pprice">Rp11.000</p></article>
-            <article class="pcard"><p class="pname">Kompor fullset</p><p class="pprice">Rp80.000</p></article>
-            <article class="pcard"><p class="pname">Bakpia isi 15</p><p class="pprice">Rp14.000</p></article>
-            <article class="pcard"><p class="pname">Kurupuk sangrai</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Basreng</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Lanting</p><p class="pprice">Rp9.000</p></article>
-            <article class="pcard"><p class="pname">Boboko</p><p class="pprice">Rp11.000</p></article>
-            <article class="pcard"><p class="pname">Mie lidi</p><p class="pprice">Rp5.000</p></article>
-            <article class="pcard"><p class="pname">Brem</p><p class="pprice">Rp11.000</p></article>
-            <article class="pcard"><p class="pname">Noga</p><p class="pprice">Rp9.000</p></article>
-            <article class="pcard"><p class="pname">Coklat kecil</p><p class="pprice">Rp8.000</p></article>
-            <article class="pcard"><p class="pname">Opak</p><p class="pprice">Rp14.000</p></article>
-            <article class="pcard"><p class="pname">Coklat besar</p><p class="pprice">Rp7.000</p></article>
-            <article class="pcard"><p class="pname">Pala</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Coklat kerikil</p><p class="pprice">Rp9.000</p></article>
-            <article class="pcard"><p class="pname">Pie susu</p><p class="pprice">Rp19.000</p></article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── Halaman 2: 16 produk, 4 kolom × 4 baris ── -->
-      <section id="page-2" class="price-page" style="opacity:0;pointer-events:none;" aria-hidden="true">
-        <div class="page-inner">
-          <div class="page-title-bar">
-            <span class="page-title-text">Daftar Harga</span>
-            <span class="page-date">19 April 2026</span>
-          </div>
-          <!-- Grid kartu: 4 × 4 -->
-          <div class="card-grid" style="--cols:4;--rows:4;">
-            <article class="pcard"><p class="pname">Emping</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Sale</p><p class="pprice">Rp8.000</p></article>
-            <article class="pcard"><p class="pname">Grubi kremes besar</p><p class="pprice">Rp16.000</p></article>
-            <article class="pcard"><p class="pname">Seblak</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Grubi kremes kecil</p><p class="pprice">Rp12.000</p></article>
-            <article class="pcard"><p class="pname">Simping</p><p class="pprice">Rp9.000</p></article>
-            <article class="pcard"><p class="pname">Intip madu</p><p class="pprice">Rp12.000</p></article>
-            <article class="pcard"><p class="pname">Subadra</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Jagong marning</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Tahu bulat</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Kerupuk buah</p><p class="pprice">Rp13.000</p></article>
-            <article class="pcard"><p class="pname">Tempe</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Kolontong</p><p class="pprice">Rp14.000</p></article>
-            <article class="pcard"><p class="pname">Teng-teng jipang</p><p class="pprice">Rp10.000</p></article>
-            <article class="pcard"><p class="pname">Kolontong kecil</p><p class="pprice">Rp7.000</p></article>
-            <article class="pcard"><p class="pname">Teng-teng warna</p><p class="pprice">Rp11.000</p></article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- ══════════ RUNNING TEXT ══════════ -->
-    <div class="shrink-0 flex items-center overflow-hidden"
-         style="background:linear-gradient(90deg,#14532d,#166534,#14532d);border-top:2px solid #ea7c14;border-bottom:2px solid #ea7c14;height:clamp(2.4rem,5.5vh,3.6rem);">
-      <!-- Label kiri -->
-      <div class="shrink-0 flex items-center gap-2 px-4 pr-5"
-           style="background:linear-gradient(135deg,#ea7c14,#c2580a);height:100%;border-right:3px solid rgba(255,255,255,.2);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="shrink-0 text-white" style="font-size:clamp(.8rem,1.8vh,1.1rem)"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
-        <span class="font-black uppercase tracking-widest text-white whitespace-nowrap"
-              style="font-size:clamp(0.7rem,1.5vh,1rem);">INFO</span>
-      </div>
-      <!-- Teks berjalan -->
-      <div class="relative min-w-0 flex-1 overflow-hidden">
-        <div id="ticker-track" class="ticker-track">
-          <span class="ticker-item">
-            🛍️ Selamat datang di <strong>A&amp;B Product</strong> &nbsp;·&nbsp;
-            Tersedia berbagai produk camilan &amp; oleh-oleh pilihan berkualitas &nbsp;·&nbsp;
-            Harga terjangkau untuk semua kalangan &nbsp;·&nbsp;
-            Produk selalu segar &amp; terjamin kualitasnya &nbsp;·&nbsp;
-            Terima kasih sudah berbelanja di <strong>A&amp;B Product</strong> &nbsp;·&nbsp;
-            Harga berlaku hari ini · Stok terbatas, segera dapatkan produk favorit Anda &nbsp;·&nbsp;
-            Hubungi kami untuk informasi lebih lanjut &nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>
-          <!-- duplikat untuk loop mulus -->
-          <span class="ticker-item" aria-hidden="true">
-            🛍️ Selamat datang di <strong>A&amp;B Product</strong> &nbsp;·&nbsp;
-            Tersedia berbagai produk camilan &amp; oleh-oleh pilihan berkualitas &nbsp;·&nbsp;
-            Harga terjangkau untuk semua kalangan &nbsp;·&nbsp;
-            Produk selalu segar &amp; terjamin kualitasnya &nbsp;·&nbsp;
-            Terima kasih sudah berbelanja di <strong>A&amp;B Product</strong> &nbsp;·&nbsp;
-            Harga berlaku hari ini · Stok terbatas, segera dapatkan produk favorit Anda &nbsp;·&nbsp;
-            Hubungi kami untuk informasi lebih lanjut &nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══════════ FOOTER ══════════ -->
-    <footer class="shrink-0 flex items-center justify-center px-4 py-1.5"
-            style="background:#0a1a0a;border-top:1.5px solid rgba(234,124,20,.2);">
-      <p style="font-size:clamp(0.6rem,1.2vh,0.82rem);color:rgba(255,255,255,.28);letter-spacing:.04em;">
-        Harga dapat berubah sewaktu-waktu &nbsp;·&nbsp; Informasi di kasir mengikat
-      </p>
-    </footer>
-
     <style>
-      /* ── Layout halaman ── */
+      /* ── Palet ──
+         Latar utama  : #f5f7f5  (putih-hijau sangat lembut)
+         Kartu        : #ffffff
+         Hijau pastel : #6aaf7a  /  #e8f5eb  (latar kartu)
+         Oranye pastel: #e8834a  /  #fdf0e8  (strip harga)
+         Teks utama   : #1e2d1e
+         Teks sub     : #6b7c6b
+      */
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: #eef3ee;
+        color: #1e2d1e;
+      }
+
+      /* ── HEADER ── */
+      .top-bar {
+        background: #ffffff;
+        border-bottom: 3px solid #6aaf7a;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: .6rem 1.5rem;
+        flex-shrink: 0;
+      }
+      .logo-wrap { display: flex; align-items: center; gap: .85rem; min-width: 0; }
+      .logo-img {
+        width: 52px; height: 52px;
+        border-radius: .75rem;
+        object-fit: cover;
+        border: 2.5px solid #6aaf7a;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px rgba(106,175,122,.25);
+      }
+      .brand-name {
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        color: #1e2d1e;
+        line-height: 1.1;
+        font-size: clamp(1.1rem, 2.8vh, 2rem);
+      }
+      .brand-sub {
+        font-size: clamp(.68rem, 1.45vh, .95rem);
+        font-weight: 600;
+        color: #e8834a;
+        letter-spacing: .04em;
+        margin-top: .1rem;
+      }
+
+      /* Jam + indikator */
+      .header-right { display: flex; align-items: center; gap: .85rem; flex-shrink: 0; }
+      .page-pill {
+        background: #e8f5eb;
+        border: 1.5px solid #6aaf7a;
+        border-radius: 999px;
+        padding: .25rem .85rem;
+        font-size: clamp(.7rem, 1.4vh, .9rem);
+        font-weight: 700;
+        color: #3a7a4a;
+        display: none;
+      }
+      @media (min-width:600px) { .page-pill { display: block; } }
+      .clock-box {
+        background: #fff7f0;
+        border: 2px solid #e8834a;
+        border-radius: .85rem;
+        padding: .35rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .1rem;
+        line-height: 1;
+      }
+      .clock-date {
+        font-size: clamp(.7rem, 1.45vh, .95rem);
+        font-weight: 700;
+        color: #3a7a4a;
+        letter-spacing: .04em;
+        text-align: center;
+      }
+      .clock-divider {
+        width: 100%;
+        height: 1px;
+        background: rgba(232,131,74,.25);
+        margin: .12rem 0;
+      }
+      .clock-time-row {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+      .clock-val {
+        font-family: ui-monospace, "Courier New", monospace;
+        font-size: clamp(1.15rem, 2.9vh, 2.3rem);
+        font-weight: 800;
+        color: #1e2d1e;
+        letter-spacing: .05em;
+        font-variant-numeric: tabular-nums;
+      }
+      .clock-day-badge {
+        font-size: clamp(.62rem, 1.3vh, .85rem);
+        font-weight: 800;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: #fff;
+        background: #e8834a;
+        border-radius: .4rem;
+        padding: .15rem .45rem;
+        line-height: 1.1;
+      }
+
+      /* ── Progress bar ── */
+      .prog-wrap {
+        height: 4px;
+        background: #d6e8d8;
+        flex-shrink: 0;
+      }
+      #prog-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #6aaf7a, #e8834a);
+        width: 0%;
+        transition: none;
+      }
+
+      /* ── Main area ── */
+      main { position: relative; flex: 1; min-height: 0; overflow: hidden; }
+
+      /* ── Halaman ── */
       .price-page {
         position: absolute;
         inset: 0;
         display: flex;
         flex-direction: column;
-        transition: opacity 0.4s ease;
-      }
-      .page-inner {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        min-height: 0;
-        padding: 0.5rem;
-        gap: 0.4rem;
+        padding: .65rem .75rem .5rem;
+        gap: .5rem;
+        transition: opacity .4s ease;
       }
       @media (min-width:640px) {
-        .page-inner { padding: 0.75rem; gap: 0.55rem; }
+        .price-page { padding: .85rem 1.1rem .65rem; gap: .6rem; }
       }
 
-      /* Judul atas konten */
-      .page-title-bar {
+      /* Strip judul di atas grid kartu */
+      .section-bar {
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-radius: 0.75rem;
-        padding: 0.4rem 1.1rem;
-        background: linear-gradient(90deg, #ea7c14, #d97706);
+        background: #ffffff;
+        border: 1.5px solid #c8e0cc;
+        border-radius: .85rem;
+        padding: .35rem 1.1rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,.05);
       }
-      .page-title-text {
-        font-weight: 900;
+      .section-title {
+        font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: .12em;
-        color: #fff;
-        text-shadow: 0 1px 3px rgba(0,0,0,.3);
-        font-size: clamp(0.85rem, 1.9vh, 1.4rem);
+        letter-spacing: .1em;
+        color: #3a7a4a;
+        font-size: clamp(.8rem, 1.8vh, 1.25rem);
       }
-      .page-date {
-        font-size: clamp(0.7rem, 1.5vh, 1rem);
-        font-weight: 700;
-        color: rgba(255,255,255,.85);
-        background: rgba(0,0,0,.25);
-        border-radius: 0.4rem;
-        padding: 0.15rem 0.6rem;
+      .section-date {
+        font-size: clamp(.65rem, 1.3vh, .9rem);
+        font-weight: 600;
+        color: #6b7c6b;
       }
 
       /* ── Grid kartu ── */
@@ -213,139 +184,318 @@
         flex: 1;
         min-height: 0;
         display: grid;
-        gap: 0.45rem;
-        grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-        grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
+        gap: .5rem;
+        grid-template-columns: repeat(var(--cols, 3), minmax(0,1fr));
+        grid-template-rows: repeat(var(--rows, 6), minmax(0,1fr));
       }
-      @media (min-width: 640px) { .card-grid { gap: 0.6rem; } }
-      @media (min-width: 1024px){ .card-grid { gap: 0.75rem; } }
+      @media (min-width:768px)  { .card-grid { gap: .65rem; } }
+      @media (min-width:1280px) { .card-grid { gap: .8rem; } }
 
       /* ── Kartu produk ── */
       .pcard {
+        background: #ffffff;
+        border: 1.5px solid #ddeedd;
+        border-radius: 1rem;
         display: flex;
         flex-direction: column;
-        border-radius: 0.85rem;
         overflow: hidden;
-        border: 1.5px solid rgba(234,124,20,.22);
-        background: #162216;
-        position: relative;
-        box-shadow: 0 4px 16px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.04) inset;
-        transition: border-color .2s;
+        box-shadow: 0 2px 8px rgba(0,0,0,.06);
+        transition: box-shadow .2s;
       }
-      /* Aksen garis atas oranye */
-      .pcard::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #ea7c14, #f59e0b, #ea7c14);
-      }
-
-      /* Nama produk */
-      .pname {
+      /* Titik hijau di sudut kiri atas */
+      .pcard-top {
         flex: 1;
         display: flex;
         align-items: center;
-        padding: 0.35rem 0.85rem 0.2rem;
-        font-size: clamp(0.88rem, 2.25vh, 1.75rem);
+        padding: .3rem .75rem .15rem;
+        background: #f5faf6;
+        position: relative;
+        overflow: hidden;
+      }
+      /* Aksen lingkaran dekoratif */
+      .pcard-top::after {
+        content: '';
+        position: absolute;
+        right: -.6rem;
+        top: -.6rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 50%;
+        background: rgba(106,175,122,.12);
+      }
+      .pname {
+        font-size: clamp(.9rem, 2.3vh, 1.85rem);
         font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: .035em;
+        letter-spacing: .04em;
         line-height: 1.15;
-        color: #d1fae5;
+        color: #1e2d1e;
         word-break: break-word;
+        position: relative;
+        z-index: 1;
       }
-      @media (min-width:640px) {
-        .pname { padding: 0.4rem 1rem 0.2rem; }
-      }
-
-      /* Harga */
-      .pprice {
+      .pcard-bottom {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0.28rem 0.75rem 0.35rem;
-        font-size: clamp(1.05rem, 2.75vh, 2.2rem);
+        background: linear-gradient(90deg, #fdf0e8, #fce8d8);
+        border-top: 1.5px solid #f2c8a8;
+        padding: .22rem .6rem;
+      }
+      .pprice {
+        font-size: clamp(1rem, 2.65vh, 2.1rem);
         font-weight: 900;
         font-variant-numeric: tabular-nums;
-        letter-spacing: .025em;
+        letter-spacing: .02em;
+        color: #b85a1a;
         line-height: 1;
-        color: #fff;
-        background: linear-gradient(135deg, #ea7c14 0%, #c2580a 100%);
-        border-top: 1px solid rgba(255,255,255,.12);
-        text-shadow: 0 1px 4px rgba(0,0,0,.35);
       }
 
       /* ── Ticker ── */
+      .ticker-wrap {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: #ffffff;
+        border-top: 2px solid #c8e0cc;
+        border-bottom: 2px solid #c8e0cc;
+        height: clamp(2.2rem, 5vh, 3.2rem);
+      }
+      .ticker-badge {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: .45rem;
+        height: 100%;
+        padding: 0 1.1rem;
+        background: linear-gradient(135deg, #6aaf7a, #4d9460);
+        border-right: 2px solid rgba(255,255,255,.4);
+      }
+      .ticker-badge svg { color: #ffffff; flex-shrink: 0; }
+      .ticker-badge span {
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: .14em;
+        color: #fff;
+        font-size: clamp(.65rem, 1.35vh, .9rem);
+        white-space: nowrap;
+      }
+      .ticker-scroll-area {
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+      }
       .ticker-track {
         display: inline-flex;
         white-space: nowrap;
-        animation: ticker-scroll 40s linear infinite;
+        animation: scroll-ticker 45s linear infinite;
       }
       .ticker-item {
-        font-size: clamp(0.8rem, 1.75vh, 1.15rem);
+        font-size: clamp(.78rem, 1.65vh, 1.05rem);
         font-weight: 600;
-        color: #d1fae5;
+        color: #2d4d2d;
         letter-spacing: .02em;
-        padding-right: 2rem;
+        padding-right: 3rem;
       }
-      @keyframes ticker-scroll {
+      .ticker-item strong { color: #3a7a4a; }
+      @keyframes scroll-ticker {
         0%   { transform: translateX(0); }
         100% { transform: translateX(-50%); }
       }
+
+      /* ── Footer ── */
+      .footer-bar {
+        flex-shrink: 0;
+        background: #f0f5f0;
+        border-top: 1.5px solid #d6e8d8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .3rem 1rem;
+      }
+      .footer-bar p {
+        font-size: clamp(.58rem, 1.1vh, .8rem);
+        font-weight: 500;
+        color: #8aaa8a;
+        letter-spacing: .04em;
+      }
     </style>
+  </head>
+
+  <body class="flex h-dvh min-h-0 flex-col overflow-hidden">
+
+    <!-- ══ HEADER ══ -->
+    <header class="top-bar">
+      <div class="logo-wrap">
+        <img src="https://avatars.githubusercontent.com/u/78911851?v=4"
+             alt="Logo A&B Product" width="52" height="52"
+             class="logo-img" loading="eager" decoding="async" />
+        <div>
+          <p class="brand-name">A&amp;B Product</p>
+          <p class="brand-sub">Informasi Harga Produk</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <p id="page-indicator" class="page-pill" aria-live="polite">1 / 2</p>
+        <div class="clock-box">
+          <span class="clock-date" id="clock-date">Senin, 1 Januari 2026</span>
+          <div class="clock-divider"></div>
+          <div class="clock-time-row">
+            <span class="clock-day-badge" id="clock-day">Sen</span>
+            <span class="clock-val" id="clock">00:00:00</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress bar -->
+    <div class="prog-wrap"><div id="prog-bar"></div></div>
+
+    <!-- ══ KONTEN ══ -->
+    <main>
+
+      <!-- Halaman 1 – 18 produk, 3 × 6 -->
+      <section id="page-1" class="price-page" aria-hidden="false">
+        <div class="section-bar">
+          <span class="section-title">Daftar Harga</span>
+          <span class="section-date">19 April 2026</span>
+        </div>
+        <div class="card-grid" style="--cols:3;--rows:6;">
+          <article class="pcard"><div class="pcard-top"><p class="pname">Aromanis</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Kompor</p></div><div class="pcard-bottom"><p class="pprice">Rp30.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Bakpia isi 12</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Kompor fullset</p></div><div class="pcard-bottom"><p class="pprice">Rp80.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Bakpia isi 15</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Kurupuk sangrai</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Basreng</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Lanting</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Boboko</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Mie lidi</p></div><div class="pcard-bottom"><p class="pprice">Rp5.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Brem</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Noga</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Coklat kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp8.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Opak</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Coklat besar</p></div><div class="pcard-bottom"><p class="pprice">Rp7.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Pala</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Coklat kerikil</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Pie susu</p></div><div class="pcard-bottom"><p class="pprice">Rp19.000</p></div></article>
+        </div>
+      </section>
+
+      <!-- Halaman 2 – 16 produk, 4 × 4 -->
+      <section id="page-2" class="price-page" style="opacity:0;pointer-events:none;" aria-hidden="true">
+        <div class="section-bar">
+          <span class="section-title">Daftar Harga</span>
+          <span class="section-date">19 April 2026</span>
+        </div>
+        <div class="card-grid" style="--cols:4;--rows:4;">
+          <article class="pcard"><div class="pcard-top"><p class="pname">Emping</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Sale</p></div><div class="pcard-bottom"><p class="pprice">Rp8.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Grubi kremes besar</p></div><div class="pcard-bottom"><p class="pprice">Rp16.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Seblak</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Grubi kremes kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Simping</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Intip madu</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Subadra</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Jagong marning</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Tahu bulat</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Kerupuk buah</p></div><div class="pcard-bottom"><p class="pprice">Rp13.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Tempe</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Kolontong</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Teng-teng jipang</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Kolontong kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp7.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Teng-teng warna</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ══ RUNNING TEXT ══ -->
+    <div class="ticker-wrap">
+      <div class="ticker-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+        <span>Info</span>
+      </div>
+      <div class="ticker-scroll-area">
+        <div class="ticker-track">
+          <span class="ticker-item">
+            🛍️ Selamat datang di <strong>A&amp;B Product</strong> &nbsp;—&nbsp;
+            Tersedia berbagai produk camilan &amp; oleh-oleh pilihan berkualitas &nbsp;—&nbsp;
+            Harga terjangkau untuk semua kalangan &nbsp;—&nbsp;
+            Produk selalu segar &amp; terjamin kualitasnya &nbsp;—&nbsp;
+            Terima kasih sudah berbelanja di <strong>A&amp;B Product</strong> &nbsp;—&nbsp;
+            Harga berlaku hari ini, stok terbatas segera dapatkan produk favorit Anda &nbsp;—&nbsp;
+            Hubungi kami untuk informasi pemesanan &amp; kerjasama &nbsp;—&nbsp;&nbsp;&nbsp;
+          </span>
+          <span class="ticker-item" aria-hidden="true">
+            🛍️ Selamat datang di <strong>A&amp;B Product</strong> &nbsp;—&nbsp;
+            Tersedia berbagai produk camilan &amp; oleh-oleh pilihan berkualitas &nbsp;—&nbsp;
+            Harga terjangkau untuk semua kalangan &nbsp;—&nbsp;
+            Produk selalu segar &amp; terjamin kualitasnya &nbsp;—&nbsp;
+            Terima kasih sudah berbelanja di <strong>A&amp;B Product</strong> &nbsp;—&nbsp;
+            Harga berlaku hari ini, stok terbatas segera dapatkan produk favorit Anda &nbsp;—&nbsp;
+            Hubungi kami untuk informasi pemesanan &amp; kerjasama &nbsp;—&nbsp;&nbsp;&nbsp;
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="footer-bar">
+      <p>Harga dapat berubah sewaktu-waktu &nbsp;·&nbsp; Informasi di kasir mengikat</p>
+    </footer>
 
     <script>
       var ROTATE_MS = 10000;
 
-      /* ── Jam ── */
+      /* Jam & Tanggal */
       function pad(n) { return String(n).padStart(2, '0'); }
+      var HARI  = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+      var HARI_S= ['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
+      var BULAN = ['Januari','Februari','Maret','April','Mei','Juni',
+                   'Juli','Agustus','September','Oktober','November','Desember'];
       function tickClock() {
-        var el = document.getElementById('clock');
-        if (!el) return;
-        var d = new Date();
-        var w = ['Min','Sen','Sel','Rab','Kam','Jum','Sab'][d.getDay()];
-        el.textContent = w + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+        var d   = new Date();
+        var dow = d.getDay();
+        var elTime = document.getElementById('clock');
+        var elDate = document.getElementById('clock-date');
+        var elDay  = document.getElementById('clock-day');
+        if (elTime) elTime.textContent = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+        if (elDate) elDate.textContent  = HARI[dow] + ', ' + d.getDate() + ' ' + BULAN[d.getMonth()] + ' ' + d.getFullYear();
+        if (elDay)  elDay.textContent   = HARI_S[dow];
       }
       tickClock();
       setInterval(tickClock, 1000);
 
-      /* ── Progress bar ── */
-      var _progStart = null;
+      /* Progress bar */
+      var _start = null;
       var _bar = document.getElementById('prog-bar');
-      function _stepProg(ts) {
-        if (!_progStart) _progStart = ts;
-        var pct = Math.min(((ts - _progStart) / ROTATE_MS) * 100, 100);
+      function _raf(ts) {
+        if (!_start) _start = ts;
+        var pct = Math.min(((ts - _start) / ROTATE_MS) * 100, 100);
         if (_bar) _bar.style.width = pct + '%';
-        if (pct < 100) requestAnimationFrame(_stepProg);
+        if (pct < 100) requestAnimationFrame(_raf);
       }
-      function resetProgress() {
-        _progStart = null;
-        if (_bar) _bar.style.width = '0%';
-        requestAnimationFrame(_stepProg);
-      }
-      requestAnimationFrame(_stepProg);
+      function resetBar() { _start = null; if (_bar) _bar.style.width = '0%'; requestAnimationFrame(_raf); }
+      requestAnimationFrame(_raf);
 
-      /* ── Rotasi halaman ── */
+      /* Rotasi halaman */
       (function () {
         var pages = Array.from(document.querySelectorAll('.price-page'));
-        var indicator = document.getElementById('page-label');
-        var n = pages.length;
-        var idx = 0;
-
-        function showPage(i) {
+        var pill  = document.getElementById('page-indicator');
+        var n = pages.length, idx = 0;
+        function show(i) {
           pages.forEach(function (p, j) {
             var on = j === i;
             p.style.opacity = on ? '1' : '0';
             p.style.pointerEvents = on ? '' : 'none';
             p.setAttribute('aria-hidden', on ? 'false' : 'true');
           });
-          if (indicator) indicator.textContent = (i + 1) + ' / ' + n;
-          resetProgress();
+          if (pill) pill.textContent = (i + 1) + ' / ' + n;
+          resetBar();
         }
-
-        showPage(0);
-        setInterval(function () { idx = (idx + 1) % n; showPage(idx); }, ROTATE_MS);
+        show(0);
+        setInterval(function () { idx = (idx + 1) % n; show(idx); }, ROTATE_MS);
       })();
     </script>
   </body>

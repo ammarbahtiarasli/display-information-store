@@ -3,390 +3,263 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A&B Product — display informasi produk dan harga untuk konsumen"
-    />
+    <meta name="description" content="A&B Product — informasi harga produk" />
     <title>A&amp;B Display Product</title>
     <link rel="icon" href="https://avatars.githubusercontent.com/u/78911851?v=4" />
     <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/78911851?v=4" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              display: ["system-ui", "Segoe UI", "sans-serif"],
-              mono: ["ui-monospace", "SFMono-Regular", "monospace"],
-            },
-          },
-        },
-      };
-    </script>
   </head>
-  <body
-    class="flex h-dvh min-h-0 flex-col overflow-hidden bg-gradient-to-b from-emerald-100 via-amber-50/80 to-emerald-50 font-display text-zinc-900 antialiased selection:bg-amber-200"
-  >
-    <!-- Header: strip hijau seperti papan nama toko -->
-    <header
-      class="shrink-0 border-b-4 border-emerald-900 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800 shadow-lg"
-    >
-      <div
-        class="flex w-full flex-wrap items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-3.5"
-      >
-        <div class="flex min-w-0 items-center gap-3 sm:gap-4">
-          <img
-            src="https://avatars.githubusercontent.com/u/78911851?v=4"
-            alt="Logo A&amp;B Product"
-            width="64"
-            height="64"
-            class="h-12 w-12 shrink-0 rounded-lg border-2 border-white/40 bg-white object-cover shadow-md sm:h-14 sm:w-14"
-            loading="eager"
-            decoding="async"
-          />
-          <div class="min-w-0">
-            <p
-              class="truncate text-[clamp(1.1rem,2.6vh,1.85rem)] font-black uppercase tracking-wide text-white drop-shadow-sm"
-            >
-              A&amp;B Product
-            </p>
-            <p
-              class="truncate text-[clamp(0.75rem,1.8vh,1.1rem)] font-medium text-emerald-100/95"
-            >
-              Informasi harga untuk pelanggan
-            </p>
-          </div>
-        </div>
-        <div class="flex flex-wrap items-center gap-2 sm:gap-4">
-          <p
-            id="page-indicator"
-            class="rounded-full bg-black/25 px-3 py-1.5 text-[clamp(0.75rem,1.6vh,1.05rem)] font-bold tabular-nums text-amber-100 ring-1 ring-white/20"
-            aria-live="polite"
-          >
-            Halaman 1 / 2
+  <body class="flex h-dvh min-h-0 flex-col overflow-hidden bg-[#0d1117] text-white antialiased">
+
+    <!-- ── TOP BAR ── -->
+    <header class="relative z-10 shrink-0 flex items-center justify-between gap-4 bg-[#161b22] border-b border-white/8 px-5 py-3 sm:px-7 sm:py-3.5">
+      <!-- Kiri: logo + nama -->
+      <div class="flex min-w-0 items-center gap-3.5">
+        <img
+          src="https://avatars.githubusercontent.com/u/78911851?v=4"
+          alt="Logo A&B Product"
+          width="52" height="52"
+          class="h-12 w-12 shrink-0 rounded-xl object-cover shadow-lg ring-2 ring-white/15"
+          loading="eager" decoding="async"
+        />
+        <div class="min-w-0">
+          <p class="truncate text-[clamp(1.1rem,2.6vh,1.8rem)] font-bold leading-tight text-white">
+            A&amp;B Product
           </p>
-          <span
-            class="rounded-lg bg-black/30 px-3 py-2 font-mono text-[clamp(1.1rem,2.8vh,2.25rem)] font-bold tabular-nums tracking-tight text-amber-300 shadow-inner ring-1 ring-white/10"
-            id="clock"
-            >--:--:--</span
-          >
+          <p class="truncate text-[clamp(0.7rem,1.5vh,1rem)] leading-tight text-slate-400">
+            Daftar harga produk
+          </p>
         </div>
+      </div>
+      <!-- Kanan: jam + indikator -->
+      <div class="flex shrink-0 items-center gap-4">
+        <p id="page-indicator"
+           class="hidden text-[clamp(0.75rem,1.5vh,1rem)] font-semibold tabular-nums text-slate-400 sm:block"
+           aria-live="polite">1 / 2</p>
+        <p id="clock"
+           class="font-mono text-[clamp(1.1rem,2.8vh,2.2rem)] font-bold tabular-nums text-white">
+          --:--:--
+        </p>
       </div>
     </header>
 
-    <main class="relative flex min-h-0 flex-1 flex-col px-2 py-2 sm:px-5 sm:py-3">
-      <!-- Halaman 1 -->
-      <section
-        id="page-1"
-        class="price-page flex min-h-0 w-full flex-1 flex-col"
-        aria-hidden="false"
-        data-page="0"
-      >
-        <div
-          class="retail-board grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] grid-rows-[auto_auto_repeat(9,minmax(0,1fr))] gap-x-0 overflow-hidden rounded-2xl border-[5px] border-emerald-900 bg-white shadow-2xl ring-1 ring-black/5"
-        >
-          <div
-            class="col-span-4 flex flex-wrap items-center justify-between gap-2 bg-gradient-to-r from-red-600 via-red-600 to-red-500 px-3 py-2.5 shadow-md sm:px-5 sm:py-3"
-          >
-            <h2
-              class="text-[clamp(0.95rem,2.2vh,1.65rem)] font-black uppercase tracking-[0.12em] text-white drop-shadow-sm"
-            >
-              Harga hari ini
-            </h2>
-            <p
-              class="rounded bg-white/95 px-2.5 py-1 text-[clamp(0.7rem,1.6vh,1rem)] font-bold text-red-700 shadow-sm"
-            >
-              19 April 2026
-            </p>
-          </div>
-          <div class="cell-h">Produk</div>
-          <div class="cell-h cell-h-price">Harga</div>
-          <div class="cell-h">Produk</div>
-          <div class="cell-h cell-h-price">Harga</div>
+    <!-- Progress bar rotasi -->
+    <div class="shrink-0 h-1 w-full bg-white/8">
+      <div id="prog-bar"
+           class="h-full bg-sky-500 transition-none"
+           style="width:0%"></div>
+    </div>
 
-          <div class="contents">
-            <div class="cell-name cell-zebra-0">Aromanis</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp12.000</span></div>
-            <div class="cell-name cell-zebra-0">Kompor</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp30.000</span></div>
+    <!-- ── KONTEN HALAMAN ── -->
+    <main class="relative flex min-h-0 flex-1 flex-col overflow-hidden">
+
+      <!-- Halaman 1 – baris 1..9 -->
+      <section id="page-1" class="price-page absolute inset-0 flex flex-col p-3 sm:p-4 md:p-5"
+               aria-hidden="false">
+        <div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-white/8 bg-[#161b22] shadow-2xl">
+          <!-- Sub-header -->
+          <div class="shrink-0 flex items-center justify-between border-b border-white/8 bg-sky-600 px-4 py-2.5 sm:px-5 sm:py-3">
+            <span class="text-[clamp(0.85rem,2vh,1.4rem)] font-bold uppercase tracking-widest text-white">Harga Hari Ini</span>
+            <span class="rounded-md bg-white/20 px-2 py-0.5 text-[clamp(0.7rem,1.5vh,0.95rem)] font-semibold text-sky-100">19 Apr 2026</span>
           </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-1">Bakpia isi 12</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp11.000</span></div>
-            <div class="cell-name cell-zebra-1">Kompor fullset</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp80.000</span></div>
+          <!-- Header kolom -->
+          <div class="shrink-0 grid grid-cols-[1fr_auto_1fr_auto] border-b border-white/8 bg-[#1c2128]">
+            <div class="col-th">Produk</div>
+            <div class="col-th-price">Harga</div>
+            <div class="col-th">Produk</div>
+            <div class="col-th-price">Harga</div>
           </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-0">Bakpia isi 15</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp14.000</span></div>
-            <div class="cell-name cell-zebra-0">Kurupuk sangrai</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-1">Basreng</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
-            <div class="cell-name cell-zebra-1">Lanting</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp9.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-0">Boboko</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp11.000</span></div>
-            <div class="cell-name cell-zebra-0">Mie lidi</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp5.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-1">Brem</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp11.000</span></div>
-            <div class="cell-name cell-zebra-1">Noga</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp9.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-0">Coklat kecil</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp8.000</span></div>
-            <div class="cell-name cell-zebra-0">Opak</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp14.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-1">Coklat besar</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp7.000</span></div>
-            <div class="cell-name cell-zebra-1">Pala</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-0">Coklat kerikil</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp9.000</span></div>
-            <div class="cell-name cell-zebra-0">Pie susu</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp19.000</span></div>
+          <!-- Baris produk -->
+          <div class="min-h-0 flex-1 grid grid-cols-[1fr_auto_1fr_auto] grid-rows-[repeat(9,minmax(0,1fr))] divide-y divide-white/5">
+            <div class="contents row-a"><div class="cn">Aromanis</div><div class="cp"><span class="price-tag">Rp12.000</span></div><div class="cn">Kompor</div><div class="cp"><span class="price-tag">Rp30.000</span></div></div>
+            <div class="contents row-b"><div class="cn">Bakpia isi 12</div><div class="cp"><span class="price-tag">Rp11.000</span></div><div class="cn">Kompor fullset</div><div class="cp"><span class="price-tag">Rp80.000</span></div></div>
+            <div class="contents row-a"><div class="cn">Bakpia isi 15</div><div class="cp"><span class="price-tag">Rp14.000</span></div><div class="cn">Kurupuk sangrai</div><div class="cp"><span class="price-tag">Rp10.000</span></div></div>
+            <div class="contents row-b"><div class="cn">Basreng</div><div class="cp"><span class="price-tag">Rp10.000</span></div><div class="cn">Lanting</div><div class="cp"><span class="price-tag">Rp9.000</span></div></div>
+            <div class="contents row-a"><div class="cn">Boboko</div><div class="cp"><span class="price-tag">Rp11.000</span></div><div class="cn">Mie lidi</div><div class="cp"><span class="price-tag">Rp5.000</span></div></div>
+            <div class="contents row-b"><div class="cn">Brem</div><div class="cp"><span class="price-tag">Rp11.000</span></div><div class="cn">Noga</div><div class="cp"><span class="price-tag">Rp9.000</span></div></div>
+            <div class="contents row-a"><div class="cn">Coklat kecil</div><div class="cp"><span class="price-tag">Rp8.000</span></div><div class="cn">Opak</div><div class="cp"><span class="price-tag">Rp14.000</span></div></div>
+            <div class="contents row-b"><div class="cn">Coklat besar</div><div class="cp"><span class="price-tag">Rp7.000</span></div><div class="cn">Pala</div><div class="cp"><span class="price-tag">Rp10.000</span></div></div>
+            <div class="contents row-a"><div class="cn">Coklat kerikil</div><div class="cp"><span class="price-tag">Rp9.000</span></div><div class="cn">Pie susu</div><div class="cp"><span class="price-tag">Rp19.000</span></div></div>
           </div>
         </div>
       </section>
 
-      <!-- Halaman 2 -->
-      <section
-        id="page-2"
-        class="price-page hidden min-h-0 w-full flex-1 flex-col"
-        aria-hidden="true"
-        data-page="1"
-      >
-        <div
-          class="retail-board grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] grid-rows-[auto_auto_repeat(8,minmax(0,1fr))] gap-x-0 overflow-hidden rounded-2xl border-[5px] border-emerald-900 bg-white shadow-2xl ring-1 ring-black/5"
-        >
-          <div
-            class="col-span-4 flex flex-wrap items-center justify-between gap-2 bg-gradient-to-r from-red-600 via-red-600 to-red-500 px-3 py-2.5 shadow-md sm:px-5 sm:py-3"
-          >
-            <h2
-              class="text-[clamp(0.95rem,2.2vh,1.65rem)] font-black uppercase tracking-[0.12em] text-white drop-shadow-sm"
-            >
-              Harga hari ini
-            </h2>
-            <p
-              class="rounded bg-white/95 px-2.5 py-1 text-[clamp(0.7rem,1.6vh,1rem)] font-bold text-red-700 shadow-sm"
-            >
-              19 April 2026
-            </p>
+      <!-- Halaman 2 – baris 10..17 -->
+      <section id="page-2" class="price-page absolute inset-0 hidden flex-col p-3 sm:p-4 md:p-5"
+               aria-hidden="true">
+        <div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-white/8 bg-[#161b22] shadow-2xl">
+          <!-- Sub-header -->
+          <div class="shrink-0 flex items-center justify-between border-b border-white/8 bg-sky-600 px-4 py-2.5 sm:px-5 sm:py-3">
+            <span class="text-[clamp(0.85rem,2vh,1.4rem)] font-bold uppercase tracking-widest text-white">Harga Hari Ini</span>
+            <span class="rounded-md bg-white/20 px-2 py-0.5 text-[clamp(0.7rem,1.5vh,0.95rem)] font-semibold text-sky-100">19 Apr 2026</span>
           </div>
-          <div class="cell-h">Produk</div>
-          <div class="cell-h cell-h-price">Harga</div>
-          <div class="cell-h">Produk</div>
-          <div class="cell-h cell-h-price">Harga</div>
-
-          <div class="contents">
-            <div class="cell-name cell-zebra-0">Emping</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
-            <div class="cell-name cell-zebra-0">Sale</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp8.000</span></div>
+          <!-- Header kolom -->
+          <div class="shrink-0 grid grid-cols-[1fr_auto_1fr_auto] border-b border-white/8 bg-[#1c2128]">
+            <div class="col-th">Produk</div>
+            <div class="col-th-price">Harga</div>
+            <div class="col-th">Produk</div>
+            <div class="col-th-price">Harga</div>
           </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-1">Grubi kremes besar</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp16.000</span></div>
-            <div class="cell-name cell-zebra-1">Seblak</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-0">Grubi kremes kecil</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp12.000</span></div>
-            <div class="cell-name cell-zebra-0">Simping</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp9.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-1">Intip madu</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp12.000</span></div>
-            <div class="cell-name cell-zebra-1">Subadra</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-0">Jagong marning</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
-            <div class="cell-name cell-zebra-0">Tahu bulat</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-1">Kerupuk buah</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp13.000</span></div>
-            <div class="cell-name cell-zebra-1">Tempe</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp10.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-0">Kolontong</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp14.000</span></div>
-            <div class="cell-name cell-zebra-0">Teng-teng jipang</div>
-            <div class="cell-price cell-zebra-0"><span class="price-inner">Rp10.000</span></div>
-          </div>
-          <div class="contents">
-            <div class="cell-name cell-zebra-1">Kolontong kecil</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp7.000</span></div>
-            <div class="cell-name cell-zebra-1">Teng-teng warna</div>
-            <div class="cell-price cell-zebra-1"><span class="price-inner">Rp11.000</span></div>
+          <!-- Baris produk -->
+          <div class="min-h-0 flex-1 grid grid-cols-[1fr_auto_1fr_auto] grid-rows-[repeat(8,minmax(0,1fr))] divide-y divide-white/5">
+            <div class="contents row-a"><div class="cn">Emping</div><div class="cp"><span class="price-tag">Rp10.000</span></div><div class="cn">Sale</div><div class="cp"><span class="price-tag">Rp8.000</span></div></div>
+            <div class="contents row-b"><div class="cn">Grubi kremes besar</div><div class="cp"><span class="price-tag">Rp16.000</span></div><div class="cn">Seblak</div><div class="cp"><span class="price-tag">Rp10.000</span></div></div>
+            <div class="contents row-a"><div class="cn">Grubi kremes kecil</div><div class="cp"><span class="price-tag">Rp12.000</span></div><div class="cn">Simping</div><div class="cp"><span class="price-tag">Rp9.000</span></div></div>
+            <div class="contents row-b"><div class="cn">Intip madu</div><div class="cp"><span class="price-tag">Rp12.000</span></div><div class="cn">Subadra</div><div class="cp"><span class="price-tag">Rp10.000</span></div></div>
+            <div class="contents row-a"><div class="cn">Jagong marning</div><div class="cp"><span class="price-tag">Rp10.000</span></div><div class="cn">Tahu bulat</div><div class="cp"><span class="price-tag">Rp10.000</span></div></div>
+            <div class="contents row-b"><div class="cn">Kerupuk buah</div><div class="cp"><span class="price-tag">Rp13.000</span></div><div class="cn">Tempe</div><div class="cp"><span class="price-tag">Rp10.000</span></div></div>
+            <div class="contents row-a"><div class="cn">Kolontong</div><div class="cp"><span class="price-tag">Rp14.000</span></div><div class="cn">Teng-teng jipang</div><div class="cp"><span class="price-tag">Rp10.000</span></div></div>
+            <div class="contents row-b"><div class="cn">Kolontong kecil</div><div class="cp"><span class="price-tag">Rp7.000</span></div><div class="cn">Teng-teng warna</div><div class="cp"><span class="price-tag">Rp11.000</span></div></div>
           </div>
         </div>
       </section>
-
-      <footer
-        class="shrink-0 pt-2 text-center text-[clamp(0.65rem,1.4vh,0.95rem)] font-semibold leading-snug text-emerald-900/80 drop-shadow-sm"
-      >
-        <p class="rounded-md bg-white/60 px-2 py-1 shadow-sm ring-1 ring-emerald-900/10">
-          Harga dapat berubah sewaktu-waktu · Informasi di kasir mengikat
-        </p>
-      </footer>
     </main>
 
+    <!-- ── FOOTER ── -->
+    <footer class="shrink-0 border-t border-white/8 bg-[#161b22] px-4 py-1.5 text-center text-[clamp(0.6rem,1.2vh,0.85rem)] text-slate-500">
+      Harga dapat berubah sewaktu-waktu · Informasi di kasir mengikat
+    </footer>
+
     <style>
-      .retail-board {
-        box-shadow:
-          0 0 0 1px rgba(255, 255, 255, 0.4) inset,
-          0 25px 50px -12px rgba(6, 78, 59, 0.35);
+      /* Pembatas vertikal tengah (antara pasangan kiri & kanan) */
+      .cn, .cp {
+        border-right: 1px solid rgba(255,255,255,0.07);
       }
-      .cell-h {
-        display: flex;
-        align-items: center;
-        border-bottom: 3px solid #065f46;
-        background: linear-gradient(180deg, #059669 0%, #047857 55%, #065f46 100%);
-        padding: 0.35rem 0.65rem;
-        font-size: clamp(0.95rem, 2vh, 1.5rem);
-        font-weight: 800;
+
+      /* Header kolom */
+      .col-th {
+        padding: 0.45rem 1rem;
+        font-size: clamp(0.8rem, 1.8vh, 1.25rem);
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: #fff;
-        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+        letter-spacing: 0.08em;
+        color: #94a3b8;
       }
-      @media (min-width: 640px) {
-        .cell-h {
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
-      }
-      .cell-h-price {
-        justify-content: center;
-        background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%);
-        border-bottom-color: #7f1d1d;
-        border-left: 2px solid rgba(255, 255, 255, 0.25);
-        border-right: 2px solid rgba(0, 0, 0, 0.15);
-      }
-      .cell-name {
-        display: flex;
-        min-height: 0;
-        min-width: 0;
-        align-items: center;
-        border-bottom: 2px solid #d1fae5;
-        padding: 0.2rem 0.6rem;
-        font-size: clamp(1rem, 2.65vh, 2rem);
-        font-weight: 800;
-        line-height: 1.12;
+      .col-th-price {
+        padding: 0.45rem 1rem;
+        font-size: clamp(0.8rem, 1.8vh, 1.25rem);
+        font-weight: 700;
         text-transform: uppercase;
-        color: #18181b;
-        letter-spacing: 0.02em;
-      }
-      .cell-name.cell-zebra-0 {
-        background: linear-gradient(90deg, #ffffff 0%, #f0fdf4 100%);
-      }
-      .cell-name.cell-zebra-1 {
-        background: linear-gradient(90deg, #ecfdf5 0%, #d1fae5 100%);
-      }
-      @media (min-width: 640px) {
-        .cell-name {
-          padding-left: 1rem;
-          padding-right: 0.75rem;
-        }
-      }
-      .cell-price {
-        display: flex;
-        min-height: 0;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 2px solid #fecaca;
-        padding: 0.2rem 0.5rem;
-      }
-      .cell-price.cell-zebra-0 {
-        background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 40%, #fde68a 100%);
-      }
-      .cell-price.cell-zebra-1 {
-        background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 45%, #fed7aa 100%);
-      }
-      .price-inner {
-        display: inline-block;
-        width: 100%;
+        letter-spacing: 0.08em;
+        color: #94a3b8;
         text-align: center;
-        border-radius: 0.35rem;
-        border: 2px solid #b91c1c;
-        background: #fff;
-        padding: 0.1rem 0.35rem;
-        font-size: clamp(0.95rem, 2.55vh, 1.95rem);
+        border-right: 1px solid rgba(255,255,255,0.07);
+      }
+
+      /* Nama produk */
+      .cn {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        padding: 0 1rem;
+        font-size: clamp(1rem, 2.6vh, 2rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
+        line-height: 1.1;
+        color: #f1f5f9;
+        word-break: break-word;
+      }
+
+      /* Kolom harga */
+      .cp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem 0.75rem;
+        white-space: nowrap;
+      }
+
+      /* Label harga — kotak solid berwarna */
+      .price-tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 7ch;
+        border-radius: 0.55rem;
+        background: linear-gradient(135deg, #f97316, #ef4444);
+        padding: 0.2rem 0.75rem;
+        font-size: clamp(0.95rem, 2.5vh, 1.9rem);
         font-weight: 900;
         font-variant-numeric: tabular-nums;
-        color: #b91c1c;
         letter-spacing: 0.02em;
-        box-shadow: 0 2px 0 #991b1b, 0 4px 8px rgba(185, 28, 28, 0.15);
+        color: #fff;
+        box-shadow: 0 2px 12px rgba(239,68,68,0.45), 0 0 0 1px rgba(255,255,255,0.12) inset;
       }
-      @media (min-width: 640px) {
-        .price-inner {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-        }
-      }
+
+      /* Zebra rows */
+      .row-a .cn { background: #161b22; }
+      .row-a .cp { background: #161b22; }
+      .row-b .cn { background: #1a2030; }
+      .row-b .cp { background: #1a2030; }
+
+      /* Hover ringan untuk interaksi di dekat layar */
+      .cn:hover { background: #1f2937 !important; }
+
+      /* Animasi fade saat ganti halaman */
+      .price-page { transition: opacity 0.35s ease; }
+      .price-page.hidden { opacity: 0; pointer-events: none; }
+      .price-page:not(.hidden) { opacity: 1; }
     </style>
 
     <script>
       var ROTATE_MS = 10000;
-      function pad(n) {
-        return String(n).padStart(2, "0");
-      }
+
+      /* Clock */
+      function pad(n) { return String(n).padStart(2,'0'); }
       function tickClock() {
-        var el = document.getElementById("clock");
+        var el = document.getElementById('clock');
         if (!el) return;
         var d = new Date();
-        var w = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"][d.getDay()];
-        el.textContent =
-          w +
-          " " +
-          pad(d.getHours()) +
-          ":" +
-          pad(d.getMinutes()) +
-          ":" +
-          pad(d.getSeconds());
+        var w = ['Min','Sen','Sel','Rab','Kam','Jum','Sab'][d.getDay()];
+        el.textContent = w + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
       }
       tickClock();
       setInterval(tickClock, 1000);
 
-      (function rotatePages() {
-        var pages = document.querySelectorAll(".price-page");
-        var indicator = document.getElementById("page-indicator");
-        var n = pages.length;
-        if (n === 0) return;
-        var idx = 0;
-        function showPage(i) {
-          for (var j = 0; j < n; j++) {
-            var p = pages[j];
-            var on = j === i;
-            p.classList.toggle("hidden", !on);
-            p.classList.toggle("flex", on);
-            p.setAttribute("aria-hidden", on ? "false" : "true");
-          }
-          if (indicator) {
-            indicator.textContent = "Halaman " + (i + 1) + " / " + n;
-          }
+      /* Progress bar */
+      (function initProgress() {
+        var bar = document.getElementById('prog-bar');
+        var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var pct = Math.min(((ts - start) / ROTATE_MS) * 100, 100);
+          if (bar) bar.style.width = pct + '%';
+          if (pct < 100) requestAnimationFrame(step);
         }
+        window._resetProgress = function () {
+          start = null;
+          if (bar) bar.style.width = '0%';
+          requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      })();
+
+      /* Page rotation */
+      (function rotatePages() {
+        var pages = Array.from(document.querySelectorAll('.price-page'));
+        var indicator = document.getElementById('page-indicator');
+        var n = pages.length;
+        var idx = 0;
+
+        function showPage(i) {
+          pages.forEach(function(p, j) {
+            var on = j === i;
+            if (on) {
+              p.classList.remove('hidden');
+              p.classList.add('flex');
+            } else {
+              p.classList.remove('flex');
+              p.classList.add('hidden');
+            }
+            p.setAttribute('aria-hidden', on ? 'false' : 'true');
+          });
+          if (indicator) indicator.textContent = (i + 1) + ' / ' + n;
+          if (window._resetProgress) window._resetProgress();
+        }
+
         showPage(0);
-        setInterval(function () {
+        setInterval(function() {
           idx = (idx + 1) % n;
           showPage(idx);
         }, ROTATE_MS);

@@ -19,220 +19,144 @@
               display: ["system-ui", "Segoe UI", "sans-serif"],
               mono: ["ui-monospace", "SFMono-Regular", "monospace"],
             },
-            animation: {
-              shimmer: "shimmer 2.5s ease-in-out infinite",
-            },
-            keyframes: {
-              shimmer: {
-                "0%, 100%": { opacity: "1" },
-                "50%": { opacity: "0.92" },
-              },
-            },
           },
         },
       };
     </script>
   </head>
-  <body
-    class="min-h-screen bg-zinc-900 text-zinc-100 font-display antialiased selection:bg-emerald-500/30"
-  >
-    <!-- Header strip (gaya papan harga toko) -->
-    <header
-      class="sticky top-0 z-20 border-b border-emerald-700/50 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800 shadow-lg"
-    >
+  <body class="min-h-screen bg-zinc-50 text-zinc-900 font-display antialiased selection:bg-zinc-200">
+    <header class="sticky top-0 z-20 border-b border-zinc-200 bg-white">
       <div
-        class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 sm:px-6"
+        class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6"
       >
-        <div class="flex items-center gap-3">
-          <span
-            class="flex h-11 w-11 items-center justify-center rounded-lg bg-white/15 text-2xl font-bold text-white ring-2 ring-white/20"
-            aria-hidden="true"
-            >M</span
-          >
-          <div>
-            <p class="text-xs font-medium uppercase tracking-widest text-emerald-100/90">
-              Minimarket Sejahtera
-            </p>
-            <h1 class="text-lg font-bold leading-tight text-white sm:text-xl">
-              Informasi Produk &amp; Harga
-            </h1>
+        <div class="flex min-w-0 items-center gap-3">
+          <img
+            src="https://avatars.githubusercontent.com/u/78911851?v=4"
+            alt="Logo A&amp;B Product"
+            width="40"
+            height="40"
+            class="h-10 w-10 shrink-0 rounded-md object-cover ring-1 ring-zinc-200"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="min-w-0">
+            <p class="truncate text-sm font-semibold text-zinc-900">A&amp;B Product</p>
+            <h1 class="truncate text-xs font-normal text-zinc-500">Informasi produk &amp; harga</h1>
           </div>
         </div>
-        <div class="flex flex-wrap items-center gap-3 text-sm">
-          <span
-            class="rounded-full bg-black/20 px-3 py-1 font-mono text-emerald-50 tabular-nums"
-            id="clock"
-            >--:--:--</span
-          >
-          <span
-            class="hidden rounded-full bg-amber-400/95 px-3 py-1 text-xs font-bold uppercase tracking-wide text-amber-950 sm:inline"
-            >Promo member</span
-          >
-        </div>
+        <span
+          class="font-mono text-sm tabular-nums text-zinc-600"
+          id="clock"
+          >--:--:--</span
+        >
       </div>
     </header>
 
-    <main class="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
-      <!-- Produk unggulan (layar besar seperti display ujung lorong) -->
+    <main class="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10">
       <section
-        class="mb-8 overflow-hidden rounded-2xl border border-zinc-700/80 bg-zinc-800/50 shadow-2xl ring-1 ring-white/5"
+        class="mb-10 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8"
         aria-labelledby="featured-heading"
       >
-        <div class="grid gap-0 lg:grid-cols-12">
+        <div class="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div
-            class="relative flex min-h-[280px] items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900 p-8 lg:col-span-5"
+            class="flex min-h-[200px] items-center justify-center rounded-lg border border-dashed border-zinc-200 bg-zinc-50 lg:col-span-5"
           >
-            <div
-              class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/40 via-transparent to-transparent"
-            ></div>
-            <div
-              class="relative flex aspect-square w-full max-w-[240px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-zinc-600 bg-zinc-800/80 p-6 text-center shadow-inner"
-            >
-              <span class="text-6xl sm:text-7xl" aria-hidden="true">🛒</span>
-              <p class="mt-4 text-sm font-medium text-zinc-400">Area gambar produk</p>
+            <div class="text-center">
+              <span class="text-5xl opacity-80" aria-hidden="true">🛒</span>
+              <p class="mt-3 text-xs text-zinc-500">Gambar produk</p>
             </div>
           </div>
-          <div class="flex flex-col justify-center p-6 sm:p-8 lg:col-span-7">
-            <p
-              class="mb-2 inline-flex w-fit items-center gap-2 rounded-full bg-red-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow animate-shimmer"
-            >
-              Promo
-            </p>
-            <h2 id="featured-heading" class="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-              Susu UHT Full Cream 1 Liter
+          <div class="flex flex-col justify-center lg:col-span-7">
+            <h2 id="featured-heading" class="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
+              Susu UHT Full Cream 1 L
             </h2>
-            <p class="mt-2 text-zinc-400">
-              Berlaku di seluruh cabang · Stok terbatas · Harga sudah termasuk PPN
+            <p class="mt-2 text-sm text-zinc-500">Harga berlaku di semua cabang · Termasuk PPN</p>
+            <p class="mt-6 text-4xl font-semibold tabular-nums tracking-tight text-zinc-900 sm:text-5xl">
+              Rp18.900
             </p>
-            <div class="mt-6 flex flex-wrap items-end gap-2">
-              <span
-                class="text-5xl font-black tabular-nums tracking-tight text-amber-400 sm:text-6xl lg:text-7xl"
-                >Rp18.900</span
-              >
-              <span class="mb-2 text-lg text-zinc-500 line-through">Rp22.500</span>
-            </div>
-            <p class="mt-2 text-sm text-emerald-400/90">Hemat Rp3.600 / unit</p>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <span
-                class="rounded-lg border border-zinc-600 bg-zinc-900/80 px-3 py-2 font-mono text-xs text-zinc-300"
-                >SKU: 8998866201234</span
-              >
-              <span class="rounded-lg border border-zinc-600 bg-zinc-900/80 px-3 py-2 text-xs text-zinc-300"
-                >Periode: 15 Apr – 30 Apr 2026</span
-              >
+            <div class="mt-6 flex flex-wrap gap-2 text-xs text-zinc-500">
+              <span class="rounded-md bg-zinc-100 px-2.5 py-1 font-mono">SKU 8998866201234</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Grid produk (gaya rak digital / beberapa item sekaligus) -->
       <section aria-labelledby="grid-heading">
-        <div class="mb-4 flex items-end justify-between gap-4">
-          <h2 id="grid-heading" class="text-xl font-bold text-white">Harga hari ini</h2>
-          <p class="text-sm text-zinc-500">Per 19 April 2026</p>
+        <div class="mb-5 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 id="grid-heading" class="text-base font-semibold text-zinc-900">Daftar harga</h2>
+          <p class="text-sm text-zinc-500">19 April 2026</p>
         </div>
-        <div
-          class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-          role="list"
-        >
-          <!-- Item -->
+        <div class="grid gap-3 sm:grid-cols-2" role="list">
           <article
-            class="group flex flex-col rounded-xl border border-zinc-700/80 bg-zinc-800/40 p-5 shadow-lg transition hover:border-emerald-600/50 hover:bg-zinc-800/70"
+            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
             role="listitem"
           >
-            <div class="mb-4 flex items-start justify-between gap-2">
-              <span class="text-4xl" aria-hidden="true">🍚</span>
-              <span
-                class="rounded bg-zinc-700/80 px-2 py-0.5 font-mono text-[10px] uppercase text-zinc-400"
-                >Berat</span
-              >
+            <div class="min-w-0">
+              <h3 class="font-medium text-zinc-900">Beras Premium 5 kg</h3>
+              <p class="mt-0.5 text-sm text-zinc-500">Kemasan segel</p>
             </div>
-            <h3 class="text-lg font-semibold text-white">Beras Premium 5 kg</h3>
-            <p class="mt-1 flex-1 text-sm text-zinc-400">Kemasan segel · Grade A</p>
-            <p class="mt-4 text-3xl font-bold tabular-nums text-amber-400">Rp64.500</p>
+            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp64.500</p>
           </article>
 
           <article
-            class="group flex flex-col rounded-xl border border-zinc-700/80 bg-zinc-800/40 p-5 shadow-lg transition hover:border-emerald-600/50 hover:bg-zinc-800/70"
+            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
             role="listitem"
           >
-            <div class="mb-4 flex items-start justify-between gap-2">
-              <span class="text-4xl" aria-hidden="true">🥚</span>
-              <span
-                class="rounded bg-emerald-900/50 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-300"
-                >Segar</span
-              >
+            <div class="min-w-0">
+              <h3 class="font-medium text-zinc-900">Telur Ayam 1 kg</h3>
+              <p class="mt-0.5 text-sm text-zinc-500">±16 butir</p>
             </div>
-            <h3 class="text-lg font-semibold text-white">Telur Ayam 1 kg</h3>
-            <p class="mt-1 flex-1 text-sm text-zinc-400">Isi ±16 butir</p>
-            <p class="mt-4 text-3xl font-bold tabular-nums text-amber-400">Rp28.000</p>
+            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp28.000</p>
           </article>
 
           <article
-            class="group flex flex-col rounded-xl border border-zinc-700/80 bg-zinc-800/40 p-5 shadow-lg transition hover:border-emerald-600/50 hover:bg-zinc-800/70 sm:col-span-2 lg:col-span-1"
+            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
             role="listitem"
           >
-            <div class="mb-4 flex items-start justify-between gap-2">
-              <span class="text-4xl" aria-hidden="true">🧴</span>
-              <span
-                class="rounded bg-red-900/50 px-2 py-0.5 text-[10px] font-bold uppercase text-red-300"
-                >Diskon</span
-              >
+            <div class="min-w-0">
+              <h3 class="font-medium text-zinc-900">Minyak Goreng 2 L</h3>
+              <p class="mt-0.5 text-sm text-zinc-500">Refill</p>
             </div>
-            <h3 class="text-lg font-semibold text-white">Minyak Goreng 2 L</h3>
-            <p class="mt-1 flex-1 text-sm text-zinc-400">Refill · Hemat energi</p>
-            <div class="mt-4 flex flex-wrap items-end gap-2">
-              <p class="text-3xl font-bold tabular-nums text-amber-400">Rp31.900</p>
-              <p class="text-lg text-zinc-500 line-through">Rp35.900</p>
-            </div>
+            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp31.900</p>
           </article>
 
           <article
-            class="group flex flex-col rounded-xl border border-zinc-700/80 bg-zinc-800/40 p-5 shadow-lg transition hover:border-emerald-600/50 hover:bg-zinc-800/70"
+            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
             role="listitem"
           >
-            <div class="mb-4 flex items-start justify-between gap-2">
-              <span class="text-4xl" aria-hidden="true">🍫</span>
+            <div class="min-w-0">
+              <h3 class="font-medium text-zinc-900">Snack Cokelat 150 g</h3>
+              <p class="mt-0.5 text-sm text-zinc-500">Kemasan</p>
             </div>
-            <h3 class="text-lg font-semibold text-white">Snack Cokelat 150 g</h3>
-            <p class="mt-1 flex-1 text-sm text-zinc-400">Impulse buy · Rak kasir</p>
-            <p class="mt-4 text-3xl font-bold tabular-nums text-amber-400">Rp12.500</p>
+            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp12.500</p>
           </article>
 
           <article
-            class="group flex flex-col rounded-xl border border-zinc-700/80 bg-zinc-800/40 p-5 shadow-lg transition hover:border-emerald-600/50 hover:bg-zinc-800/70"
+            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
             role="listitem"
           >
-            <div class="mb-4 flex items-start justify-between gap-2">
-              <span class="text-4xl" aria-hidden="true">🧃</span>
+            <div class="min-w-0">
+              <h3 class="font-medium text-zinc-900">Jus Kotak 250 ml</h3>
+              <p class="mt-0.5 text-sm text-zinc-500">Kemasan karton</p>
             </div>
-            <h3 class="text-lg font-semibold text-white">Jus Kotak 250 ml</h3>
-            <p class="mt-1 flex-1 text-sm text-zinc-400">Beli 2 lebih hemat</p>
-            <p class="mt-4 text-3xl font-bold tabular-nums text-amber-400">Rp5.000</p>
+            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp5.000</p>
           </article>
 
           <article
-            class="group flex flex-col rounded-xl border border-zinc-700/80 bg-zinc-800/40 p-5 shadow-lg transition hover:border-emerald-600/50 hover:bg-zinc-800/70"
+            class="flex items-start justify-between gap-4 rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
             role="listitem"
           >
-            <div class="mb-4 flex items-start justify-between gap-2">
-              <span class="text-4xl" aria-hidden="true">🧼</span>
+            <div class="min-w-0">
+              <h3 class="font-medium text-zinc-900">Sabun Cuci 800 ml</h3>
+              <p class="mt-0.5 text-sm text-zinc-500">Botol</p>
             </div>
-            <h3 class="text-lg font-semibold text-white">Sabun Cuci 800 ml</h3>
-            <p class="mt-1 flex-1 text-sm text-zinc-400">Aroma jeruk</p>
-            <p class="mt-4 text-3xl font-bold tabular-nums text-amber-400">Rp18.200</p>
+            <p class="shrink-0 text-lg font-semibold tabular-nums text-zinc-900">Rp18.200</p>
           </article>
         </div>
       </section>
 
-      <!-- Footer info -->
-      <footer
-        class="mt-10 rounded-xl border border-zinc-700/60 bg-zinc-800/30 px-4 py-4 text-center text-sm text-zinc-500 sm:px-6"
-      >
-        <p>
-          Harga dapat berubah sewaktu-waktu tanpa pemberitahuan. Untuk keluhan &amp; saran, hubungi
-          layanan pelanggan di kasir.
-        </p>
+      <footer class="mt-10 border-t border-zinc-200 pt-6 text-center text-xs text-zinc-500">
+        <p>Harga dapat berubah sewaktu-waktu. Informasi di kasir mengikat.</p>
       </footer>
     </main>
 

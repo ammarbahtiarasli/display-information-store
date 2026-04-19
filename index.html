@@ -7,34 +7,38 @@
     <title>A&amp;B Display Product</title>
     <link rel="icon" href="https://avatars.githubusercontent.com/u/78911851?v=4" />
     <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/78911851?v=4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* ── Palet ──
-         Latar utama  : #f5f7f5  (putih-hijau sangat lembut)
-         Kartu        : #ffffff
-         Hijau pastel : #6aaf7a  /  #e8f5eb  (latar kartu)
-         Oranye pastel: #e8834a  /  #fdf0e8  (strip harga)
-         Teks utama   : #1e2d1e
-         Teks sub     : #6b7c6b
-      */
-
+      /* ──────────────────────────────────────────
+         Palet A&B Product — Tailwind CSS palette
+         Hijau  : green-600 #16a34a / green-700 #15803d
+                  green-50  #f0fdf4 / green-100 #dcfce7
+         Oranye : orange-500 #f97316 / orange-700 #c2410c
+                  orange-50  #fff7ed / orange-100 #ffedd5
+         Latar  : green-50  #f0fdf4
+         Teks   : green-950 #052e16
+         Harga  : orange-700 #c2410c
+      ────────────────────────────────────────── */
       * { box-sizing: border-box; margin: 0; padding: 0; }
 
       body {
-        font-family: "Segoe UI", system-ui, sans-serif;
-        background: #eef3ee;
-        color: #1e2d1e;
+        font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+        background: #f0fdf4;   /* green-50 */
+        color: #052e16;        /* green-950 */
       }
 
       /* ── HEADER ── */
       .top-bar {
         background: #ffffff;
-        border-bottom: 3px solid #6aaf7a;
+        border-bottom: 3px solid #16a34a;   /* green-600 */
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
-        padding: .6rem 1.5rem;
+        padding: .55rem 1.5rem;
         flex-shrink: 0;
       }
       .logo-wrap { display: flex; align-items: center; gap: .85rem; min-width: 0; }
@@ -42,44 +46,46 @@
         width: 52px; height: 52px;
         border-radius: .75rem;
         object-fit: cover;
-        border: 2.5px solid #6aaf7a;
+        border: 2.5px solid #16a34a;        /* green-600 */
         flex-shrink: 0;
-        box-shadow: 0 2px 8px rgba(106,175,122,.25);
+        box-shadow: 0 2px 8px rgba(22,163,74,.2);
       }
       .brand-name {
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: .06em;
-        color: #1e2d1e;
+        color: #14532d;                     /* green-900 */
         line-height: 1.1;
         font-size: clamp(1.1rem, 2.8vh, 2rem);
       }
       .brand-sub {
         font-size: clamp(.68rem, 1.45vh, .95rem);
         font-weight: 600;
-        color: #e8834a;
+        color: #f97316;                     /* orange-500 */
         letter-spacing: .04em;
         margin-top: .1rem;
       }
 
-      /* Jam + indikator */
+      /* Kanan header */
       .header-right { display: flex; align-items: center; gap: .85rem; flex-shrink: 0; }
       .page-pill {
-        background: #e8f5eb;
-        border: 1.5px solid #6aaf7a;
+        background: #dcfce7;                /* green-100 */
+        border: 1.5px solid #16a34a;        /* green-600 */
         border-radius: 999px;
-        padding: .25rem .85rem;
-        font-size: clamp(.7rem, 1.4vh, .9rem);
+        padding: .28rem .9rem;
+        font-size: clamp(.72rem, 1.5vh, .95rem);
         font-weight: 700;
-        color: #3a7a4a;
+        color: #15803d;                     /* green-700 */
         display: none;
+        white-space: nowrap;
       }
       @media (min-width:600px) { .page-pill { display: block; } }
+
       .clock-box {
-        background: #fff7f0;
-        border: 2px solid #e8834a;
+        background: #fff7ed;                /* orange-50 */
+        border: 2px solid #f97316;          /* orange-500 */
         border-radius: .85rem;
-        padding: .35rem 1rem;
+        padding: .3rem 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -89,26 +95,23 @@
       .clock-date {
         font-size: clamp(.7rem, 1.45vh, .95rem);
         font-weight: 700;
-        color: #3a7a4a;
-        letter-spacing: .04em;
+        color: #15803d;                     /* green-700 */
+        letter-spacing: .03em;
         text-align: center;
+        white-space: nowrap;
       }
       .clock-divider {
         width: 100%;
         height: 1px;
-        background: rgba(232,131,74,.25);
-        margin: .12rem 0;
+        background: #fed7aa;               /* orange-200 */
+        margin: .1rem 0;
       }
-      .clock-time-row {
-        display: flex;
-        align-items: center;
-        gap: .5rem;
-      }
+      .clock-time-row { display: flex; align-items: center; gap: .5rem; }
       .clock-val {
-        font-family: ui-monospace, "Courier New", monospace;
+        font-family: "Plus Jakarta Sans", ui-monospace, monospace;
         font-size: clamp(1.15rem, 2.9vh, 2.3rem);
         font-weight: 800;
-        color: #1e2d1e;
+        color: #052e16;                     /* green-950 */
         letter-spacing: .05em;
         font-variant-numeric: tabular-nums;
       }
@@ -118,26 +121,22 @@
         letter-spacing: .1em;
         text-transform: uppercase;
         color: #fff;
-        background: #e8834a;
+        background: #f97316;               /* orange-500 */
         border-radius: .4rem;
         padding: .15rem .45rem;
         line-height: 1.1;
       }
 
       /* ── Progress bar ── */
-      .prog-wrap {
-        height: 4px;
-        background: #d6e8d8;
-        flex-shrink: 0;
-      }
+      .prog-wrap { height: 4px; background: #bbf7d0; flex-shrink: 0; }  /* green-200 */
       #prog-bar {
         height: 100%;
-        background: linear-gradient(90deg, #6aaf7a, #e8834a);
+        background: linear-gradient(90deg, #16a34a, #f97316);  /* green-600 → orange-500 */
         width: 0%;
         transition: none;
       }
 
-      /* ── Main area ── */
+      /* ── Main ── */
       main { position: relative; flex: 1; min-height: 0; overflow: hidden; }
 
       /* ── Halaman ── */
@@ -146,47 +145,62 @@
         inset: 0;
         display: flex;
         flex-direction: column;
-        padding: .65rem .75rem .5rem;
+        padding: .6rem .75rem .5rem;
         gap: .5rem;
         transition: opacity .4s ease;
       }
       @media (min-width:640px) {
-        .price-page { padding: .85rem 1.1rem .65rem; gap: .6rem; }
+        .price-page { padding: .75rem 1rem .6rem; gap: .6rem; }
       }
 
-      /* Strip judul di atas grid kartu */
+      /* Strip judul */
       .section-bar {
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
         background: #ffffff;
-        border: 1.5px solid #c8e0cc;
+        border: 1.5px solid #86efac;        /* green-300 */
         border-radius: .85rem;
-        padding: .35rem 1.1rem;
-        box-shadow: 0 1px 4px rgba(0,0,0,.05);
+        padding: .3rem 1.1rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,.04);
       }
       .section-title {
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: .1em;
-        color: #3a7a4a;
+        color: #15803d;                     /* green-700 */
         font-size: clamp(.8rem, 1.8vh, 1.25rem);
+      }
+      .section-meta {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
       }
       .section-date {
         font-size: clamp(.65rem, 1.3vh, .9rem);
         font-weight: 600;
-        color: #6b7c6b;
+        color: #4ade80;                     /* green-400 (muted on white) → use 600 */
+        color: #16a34a;
+      }
+      .section-page-badge {
+        background: #dcfce7;               /* green-100 */
+        border: 1.5px solid #16a34a;       /* green-600 */
+        border-radius: 999px;
+        padding: .15rem .7rem;
+        font-size: clamp(.62rem, 1.25vh, .85rem);
+        font-weight: 700;
+        color: #15803d;                    /* green-700 */
       }
 
-      /* ── Grid kartu ── */
+      /* ── Grid kartu — SELALU 4 kolom × 3 baris ── */
       .card-grid {
         flex: 1;
         min-height: 0;
         display: grid;
         gap: .5rem;
-        grid-template-columns: repeat(var(--cols, 3), minmax(0,1fr));
-        grid-template-rows: repeat(var(--rows, 6), minmax(0,1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: repeat(3, minmax(0, 1fr));
       }
       @media (min-width:768px)  { .card-grid { gap: .65rem; } }
       @media (min-width:1280px) { .card-grid { gap: .8rem; } }
@@ -194,34 +208,33 @@
       /* ── Kartu produk ── */
       .pcard {
         background: #ffffff;
-        border: 1.5px solid #ddeedd;
+        border: 1.5px solid #bbf7d0;       /* green-200 */
         border-radius: 1rem;
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0,0,0,.06);
-        transition: box-shadow .2s;
+        box-shadow: 0 2px 8px rgba(22,163,74,.08);
       }
-      /* Titik hijau di sudut kiri atas */
+      /* Area nama */
       .pcard-top {
         flex: 1;
         display: flex;
         align-items: center;
-        padding: .3rem .75rem .15rem;
-        background: #f5faf6;
+        padding: .35rem .85rem .2rem;
+        background: #f0fdf4;               /* green-50 */
         position: relative;
         overflow: hidden;
       }
-      /* Aksen lingkaran dekoratif */
       .pcard-top::after {
         content: '';
         position: absolute;
-        right: -.6rem;
-        top: -.6rem;
-        width: 2.8rem;
-        height: 2.8rem;
+        right: -.5rem;
+        top: -.5rem;
+        width: 2.6rem;
+        height: 2.6rem;
         border-radius: 50%;
-        background: rgba(106,175,122,.12);
+        background: #bbf7d0;               /* green-200 */
+        opacity: .6;
       }
       .pname {
         font-size: clamp(.9rem, 2.3vh, 1.85rem);
@@ -229,26 +242,34 @@
         text-transform: uppercase;
         letter-spacing: .04em;
         line-height: 1.15;
-        color: #1e2d1e;
+        color: #14532d;                    /* green-900 */
         word-break: break-word;
         position: relative;
         z-index: 1;
       }
+      /* Strip harga */
       .pcard-bottom {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(90deg, #fdf0e8, #fce8d8);
-        border-top: 1.5px solid #f2c8a8;
-        padding: .22rem .6rem;
+        background: linear-gradient(90deg, #fff7ed, #ffedd5);  /* orange-50 → orange-100 */
+        border-top: 1.5px solid #fed7aa;   /* orange-200 */
+        padding: .35rem .6rem;
       }
       .pprice {
-        font-size: clamp(1rem, 2.65vh, 2.1rem);
+        font-size: clamp(1.3rem, 3.6vh, 2.9rem);
         font-weight: 900;
         font-variant-numeric: tabular-nums;
         letter-spacing: .02em;
-        color: #b85a1a;
+        color: #c2410c;                    /* orange-700 */
         line-height: 1;
+      }
+
+      /* Kartu kosong (placeholder) agar grid tetap penuh */
+      .pcard-ghost {
+        background: rgba(240,253,244,.5);  /* green-50/50 */
+        border: 1.5px dashed #bbf7d0;      /* green-200 */
+        border-radius: 1rem;
       }
 
       /* ── Ticker ── */
@@ -258,47 +279,43 @@
         align-items: center;
         overflow: hidden;
         background: #ffffff;
-        border-top: 2px solid #c8e0cc;
-        border-bottom: 2px solid #c8e0cc;
-        height: clamp(2.2rem, 5vh, 3.2rem);
+        border-top: 2px solid #86efac;     /* green-300 */
+        border-bottom: 2px solid #86efac;
+        height: clamp(3rem, 7vh, 4.5rem);
       }
       .ticker-badge {
         flex-shrink: 0;
         display: flex;
         align-items: center;
-        gap: .45rem;
+        gap: .5rem;
         height: 100%;
-        padding: 0 1.1rem;
-        background: linear-gradient(135deg, #6aaf7a, #4d9460);
-        border-right: 2px solid rgba(255,255,255,.4);
+        padding: 0 1.2rem;
+        background: linear-gradient(135deg, #16a34a, #15803d);  /* green-600 → green-700 */
+        border-right: 2px solid rgba(255,255,255,.35);
       }
-      .ticker-badge svg { color: #ffffff; flex-shrink: 0; }
+      .ticker-badge svg { color: #fff; flex-shrink: 0; }
       .ticker-badge span {
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: .14em;
         color: #fff;
-        font-size: clamp(.65rem, 1.35vh, .9rem);
+        font-size: clamp(.9rem, 2vh, 1.3rem);
         white-space: nowrap;
       }
-      .ticker-scroll-area {
-        flex: 1;
-        overflow: hidden;
-        position: relative;
-      }
+      .ticker-scroll-area { flex: 1; overflow: hidden; }
       .ticker-track {
         display: inline-flex;
         white-space: nowrap;
         animation: scroll-ticker 45s linear infinite;
       }
       .ticker-item {
-        font-size: clamp(.78rem, 1.65vh, 1.05rem);
+        font-size: clamp(1rem, 2.4vh, 1.65rem);
         font-weight: 600;
-        color: #2d4d2d;
+        color: #166534;                    /* green-800 */
         letter-spacing: .02em;
-        padding-right: 3rem;
+        padding-right: 4rem;
       }
-      .ticker-item strong { color: #3a7a4a; }
+      .ticker-item strong { color: #15803d; }  /* green-700 */
       @keyframes scroll-ticker {
         0%   { transform: translateX(0); }
         100% { transform: translateX(-50%); }
@@ -307,17 +324,18 @@
       /* ── Footer ── */
       .footer-bar {
         flex-shrink: 0;
-        background: #f0f5f0;
-        border-top: 1.5px solid #d6e8d8;
+        background: #f0fdf4;               /* green-50 */
+        border-top: 1.5px solid #bbf7d0;   /* green-200 */
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: .3rem 1rem;
+        padding: .28rem 1rem;
       }
       .footer-bar p {
         font-size: clamp(.58rem, 1.1vh, .8rem);
         font-weight: 500;
-        color: #8aaa8a;
+        color: #4ade80;                    /* green-400 → muted */
+        color: #86efac;
         letter-spacing: .04em;
       }
     </style>
@@ -337,7 +355,7 @@
         </div>
       </div>
       <div class="header-right">
-        <p id="page-indicator" class="page-pill" aria-live="polite">1 / 2</p>
+        <p id="page-indicator" class="page-pill" aria-live="polite">1 / 3</p>
         <div class="clock-box">
           <span class="clock-date" id="clock-date">Senin, 1 Januari 2026</span>
           <div class="clock-divider"></div>
@@ -355,57 +373,79 @@
     <!-- ══ KONTEN ══ -->
     <main>
 
-      <!-- Halaman 1 – 18 produk, 3 × 6 -->
+      <!-- ── Halaman 1: produk 1–12 ── -->
       <section id="page-1" class="price-page" aria-hidden="false">
         <div class="section-bar">
           <span class="section-title">Daftar Harga</span>
-          <span class="section-date">19 April 2026</span>
+          <div class="section-meta">
+            <span class="section-date">19 April 2026</span>
+            <span class="section-page-badge">1 / 3</span>
+          </div>
         </div>
-        <div class="card-grid" style="--cols:3;--rows:6;">
+        <div class="card-grid">
           <article class="pcard"><div class="pcard-top"><p class="pname">Aromanis</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Kompor</p></div><div class="pcard-bottom"><p class="pprice">Rp30.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Bakpia isi 12</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Kompor fullset</p></div><div class="pcard-bottom"><p class="pprice">Rp80.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Bakpia isi 15</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Kurupuk sangrai</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Basreng</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Lanting</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Boboko</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Mie lidi</p></div><div class="pcard-bottom"><p class="pprice">Rp5.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Brem</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Noga</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Coklat kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp8.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Opak</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Coklat besar</p></div><div class="pcard-bottom"><p class="pprice">Rp7.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Pala</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Coklat kerikil</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Pie susu</p></div><div class="pcard-bottom"><p class="pprice">Rp19.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Emping</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Grubi kremes besar</p></div><div class="pcard-bottom"><p class="pprice">Rp16.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Grubi kremes kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
         </div>
       </section>
 
-      <!-- Halaman 2 – 16 produk, 4 × 4 -->
+      <!-- ── Halaman 2: produk 13–24 ── -->
       <section id="page-2" class="price-page" style="opacity:0;pointer-events:none;" aria-hidden="true">
         <div class="section-bar">
           <span class="section-title">Daftar Harga</span>
-          <span class="section-date">19 April 2026</span>
+          <div class="section-meta">
+            <span class="section-date">19 April 2026</span>
+            <span class="section-page-badge">2 / 3</span>
+          </div>
         </div>
-        <div class="card-grid" style="--cols:4;--rows:4;">
-          <article class="pcard"><div class="pcard-top"><p class="pname">Emping</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Sale</p></div><div class="pcard-bottom"><p class="pprice">Rp8.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Grubi kremes besar</p></div><div class="pcard-bottom"><p class="pprice">Rp16.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Seblak</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Grubi kremes kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Simping</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+        <div class="card-grid">
           <article class="pcard"><div class="pcard-top"><p class="pname">Intip madu</p></div><div class="pcard-bottom"><p class="pprice">Rp12.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Subadra</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Jagong marning</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Tahu bulat</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Kerupuk buah</p></div><div class="pcard-bottom"><p class="pprice">Rp13.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Tempe</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Kolontong</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
-          <article class="pcard"><div class="pcard-top"><p class="pname">Teng-teng jipang</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Kolontong kecil</p></div><div class="pcard-bottom"><p class="pprice">Rp7.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Kompor</p></div><div class="pcard-bottom"><p class="pprice">Rp30.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Kompor fullset</p></div><div class="pcard-bottom"><p class="pprice">Rp80.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Kurupuk sangrai</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Lanting</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Mie lidi</p></div><div class="pcard-bottom"><p class="pprice">Rp5.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Noga</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Opak</p></div><div class="pcard-bottom"><p class="pprice">Rp14.000</p></div></article>
+        </div>
+      </section>
+
+      <!-- ── Halaman 3: produk 25–34 + 2 ghost ── -->
+      <section id="page-3" class="price-page" style="opacity:0;pointer-events:none;" aria-hidden="true">
+        <div class="section-bar">
+          <span class="section-title">Daftar Harga</span>
+          <div class="section-meta">
+            <span class="section-date">19 April 2026</span>
+            <span class="section-page-badge">3 / 3</span>
+          </div>
+        </div>
+        <div class="card-grid">
+          <article class="pcard"><div class="pcard-top"><p class="pname">Pala</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Pie susu</p></div><div class="pcard-bottom"><p class="pprice">Rp19.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Sale</p></div><div class="pcard-bottom"><p class="pprice">Rp8.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Seblak</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Simping</p></div><div class="pcard-bottom"><p class="pprice">Rp9.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Subadra</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Tahu bulat</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Tempe</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
+          <article class="pcard"><div class="pcard-top"><p class="pname">Teng-teng jipang</p></div><div class="pcard-bottom"><p class="pprice">Rp10.000</p></div></article>
           <article class="pcard"><div class="pcard-top"><p class="pname">Teng-teng warna</p></div><div class="pcard-bottom"><p class="pprice">Rp11.000</p></div></article>
+          <!-- 2 kartu kosong agar grid 4×3 tetap konsisten -->
+          <div class="pcard-ghost"></div>
+          <div class="pcard-ghost"></div>
         </div>
       </section>
     </main>
@@ -413,7 +453,7 @@
     <!-- ══ RUNNING TEXT ══ -->
     <div class="ticker-wrap">
       <div class="ticker-badge">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
         <span>Info</span>
       </div>
       <div class="ticker-scroll-area">
@@ -448,12 +488,12 @@
     <script>
       var ROTATE_MS = 10000;
 
-      /* Jam & Tanggal */
+      /* ── Jam & tanggal ── */
       function pad(n) { return String(n).padStart(2, '0'); }
-      var HARI  = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
-      var HARI_S= ['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
-      var BULAN = ['Januari','Februari','Maret','April','Mei','Juni',
-                   'Juli','Agustus','September','Oktober','November','Desember'];
+      var HARI   = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+      var HARI_S = ['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
+      var BULAN  = ['Januari','Februari','Maret','April','Mei','Juni',
+                    'Juli','Agustus','September','Oktober','November','Desember'];
       function tickClock() {
         var d   = new Date();
         var dow = d.getDay();
@@ -461,15 +501,15 @@
         var elDate = document.getElementById('clock-date');
         var elDay  = document.getElementById('clock-day');
         if (elTime) elTime.textContent = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
-        if (elDate) elDate.textContent  = HARI[dow] + ', ' + d.getDate() + ' ' + BULAN[d.getMonth()] + ' ' + d.getFullYear();
-        if (elDay)  elDay.textContent   = HARI_S[dow];
+        if (elDate) elDate.textContent = HARI[dow] + ', ' + d.getDate() + ' ' + BULAN[d.getMonth()] + ' ' + d.getFullYear();
+        if (elDay)  elDay.textContent  = HARI_S[dow];
       }
       tickClock();
       setInterval(tickClock, 1000);
 
-      /* Progress bar */
+      /* ── Progress bar ── */
       var _start = null;
-      var _bar = document.getElementById('prog-bar');
+      var _bar   = document.getElementById('prog-bar');
       function _raf(ts) {
         if (!_start) _start = ts;
         var pct = Math.min(((ts - _start) / ROTATE_MS) * 100, 100);
@@ -479,7 +519,7 @@
       function resetBar() { _start = null; if (_bar) _bar.style.width = '0%'; requestAnimationFrame(_raf); }
       requestAnimationFrame(_raf);
 
-      /* Rotasi halaman */
+      /* ── Rotasi halaman ── */
       (function () {
         var pages = Array.from(document.querySelectorAll('.price-page'));
         var pill  = document.getElementById('page-indicator');
@@ -487,7 +527,7 @@
         function show(i) {
           pages.forEach(function (p, j) {
             var on = j === i;
-            p.style.opacity = on ? '1' : '0';
+            p.style.opacity       = on ? '1' : '0';
             p.style.pointerEvents = on ? '' : 'none';
             p.setAttribute('aria-hidden', on ? 'false' : 'true');
           });
